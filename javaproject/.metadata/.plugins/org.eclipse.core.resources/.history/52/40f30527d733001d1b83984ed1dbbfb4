@@ -1,0 +1,39 @@
+
+public class Member {
+
+	public static void main(String[] args) {
+		//class 파일의 실행 포인트
+		printMyname("손흥민");
+		
+		
+		String name = null;
+		int age = 0;
+		double height = 0.0;
+		boolean hasBook = false;
+		
+		
+		name = "서혜정";
+		age = 32;
+		height = 168.5;
+		hasBook = true;
+		
+		System.out.println("저의 이름은 " + name + "입니다.");
+		System.out.println("나이는 " + age + " 세 입니다.");
+		System.out.println("키는 " + height + "cm 입니다.");
+		System.out.println("자바 책의 보유 여부 : " + hasBook);
+		
+			}
+
+	// 자기 자신의 이름을 출력하는 메소드
+	// 반환타입 : 없다 => void
+	// 매개변수 : 없다
+	// 처리내용 : 자신의 이름을 출력한다
+
+	
+	public static void printMyname(String name) {
+		
+		System.out.println("안녕하세요! " + name + " 입니다.");
+		
+		// 반환이 있다면 return 사용
+	}
+}

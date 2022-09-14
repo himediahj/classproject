@@ -1,0 +1,36 @@
+
+public class Calculator {
+
+	public static void main(String[] args) {
+		int result = add(100, 200)
+		
+	
+	}
+	
+	public static int add(int n1, int n2) {
+	int result = n1 + n2;
+	return result;
+	}
+	
+	public static int sub(int n1, int n2) {
+		int result2 = n1 - n2;
+		return result2;
+		
+	}
+	
+	public static int mul(int n1, int n2) {
+		int result3 = n1 * n2;
+		return result3;
+		
+	}
+	
+	public static int div(int n1, int n2) {
+		int result4 = n1 / n2;
+		return result4;
+		
+	}
+	
+}
+
+
+
