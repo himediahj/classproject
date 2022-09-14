@@ -4,9 +4,9 @@ public class Person {
 	
 	public static void main(String[] args) {
 		
-		String name;
-		String phone;
-		int birth;
+		String memberName = null;
+		String phoneNumber = null;
+		String personNumber = null;
 				
 	}
 }

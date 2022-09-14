@@ -11,14 +11,14 @@ public class Member {
 		
 			
 		
-		String name = null;
+		// String name = null;
 		int age = 0;
 		String nickName = null;
 		double height = 0.0;
 		boolean hasBook = false;
 		
 		System.out.print("이름을 입력해주세요.>>> ");
-		name = in.nextLine();
+		String name = in.nextLine();
 		
 		System.out.print("나이를 입력해주세요.>>> ");
 		age = in.nextInt();

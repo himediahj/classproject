@@ -1,9 +1,0 @@
-
-public class practice1 {
-
-	public static void main(String[] args) {
-		System.out.printf("이름 : %s, 전화번호 : %d, 주민번호 : %d", "손흥민", 010, 929);
-
-	}
-
-}
