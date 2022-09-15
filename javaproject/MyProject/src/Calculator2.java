@@ -6,8 +6,8 @@ public class Calculator2 {
 
 		Scanner in = new Scanner(System.in);
 		System.out.print("");
-		int num1 = in.nextInt();
-		int num2 = in.nextInt();
+		long num1 = in.nextInt();
+		long num2 = in.nextInt();
 		double r = in.nextDouble();
 				
 		addPrint(num1, num2);
