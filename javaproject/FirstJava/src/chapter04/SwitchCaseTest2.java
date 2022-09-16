@@ -15,11 +15,11 @@ public class SwitchCaseTest2 {
 		// key : byte, short, int, char
 		
 		switch(score / 10) {
-		case 10:
-			System.out.println("A");
-			break;
+		/*
+		 * case 10: System.out.println("A"); break;
+		 */
 		
-		case 9:
+		case 9: case 10:
 			System.out.println("A");
 			break;
 		
