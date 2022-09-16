@@ -1,14 +1,38 @@
 package chapter04.exam;
 
 import java.util.Calendar;
+import java.util.Scanner;
 
 public class Member {
 
 	public static void main(String[] args) {
 		
-		checkVaccine(2000);
 		
-		checkMedical(1950);
+		Scanner in = new Scanner(System.in);
+		
+		
+		while(true) {	// 무한 반복
+			
+			
+			System.out.println("출생 년도를 입력해주세요. 종료는(0) >>> ");
+			int year = in.nextInt();
+			
+			if(year == 0) {
+				System.out.println("프로그램을 종료합니다.");
+				return;		// 메소드의 종료, 반환
+				// main 메소드의 종료는 프로그램의 종료와 같다.
+			}
+			
+			System.out.println();
+			System.out.println("조회 결과");
+			System.out.println("-------------");
+			
+			checkVaccine(year);
+			
+			checkMedical(year);
+			System.out.println("-------------");
+			System.out.println();
+		}
 	}
 
 	// ① 독감예방 접종이 가능한지 여부를 확인하는 메소드를 정의합니다.
@@ -48,10 +72,10 @@ public class Member {
 	public static void checkMedical(int birthyear) {
 		
 		// 올해 년도
-		int curYear = Calendar.getInstance().get(Calendar.YEAR);
+		int currentYear = Calendar.getInstance().get(Calendar.YEAR);
 		
 		// 나이
-		int age = curYear - birthyear + 1;
+		int age = currentYear - birthyear + 1;
 		
 		System.out.println("나이 : " + age);
 
@@ -60,7 +84,7 @@ public class Member {
 		
 		if(age >=20) {
 			
-			if(curYear %2 == birthyear %2) {
+			if(currentYear %2 == birthyear %2) {
 				System.out.println("무료 검진이 가능합니다.");
 				
 				if(age >= 40) {
