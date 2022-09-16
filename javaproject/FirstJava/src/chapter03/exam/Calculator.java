@@ -28,11 +28,11 @@ public class Calculator {
 		//////////////////////////////////////
 		
 		System.out.print("원의 반지름을 입력해주세요.>>> ");
-		double r = in.nextDouble();
+		double rad = in.nextDouble();
 		
 		System.out.println();
-		System.out.println("원의 둘레 : " + circum(r));
-		System.out.println("원의 넓이 : " + area(r));
+		System.out.println("원의 둘레 : " + circum(rad));
+		System.out.println("원의 넓이 : " + area(rad));
 	}
 
 	
