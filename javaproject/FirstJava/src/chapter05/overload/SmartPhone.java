@@ -1,4 +1,4 @@
-package chapter05;
+package chapter05.overload;
 
 
 // 클래스는 인스턴스를 생성하기 위한 설계도 역할을 한다.
@@ -23,6 +23,46 @@ public class SmartPhone {
 	float size;	
 	String company;
 	int volumeSize;
+	
+	
+	// 생성자 : 인스턴스 생성 시에 단 한 번 실행하는 초기화 메소드
+	// 클래스 이름 (매개변수...){
+	//	초기화 코드
+	// }
+	SmartPhone(){
+		// 매개변수 없고 처리 내용이 없는 생성자 => 기본 생성자(default 생성자) 생략 가능하다. 
+	}
+	
+	// 생성자의 오버로딩 : 같은 이름의 생성자 정의
+	SmartPhone(String color, float size, String company, int volumeSize){
+		// 인스턴스를 생성하면 this 라는 참조변수도 생성
+		// this 는 현재 인스턴스 자신의 주소값을 가지는 변수
+		this.color = color;
+		this.size = size;
+		this.company = company;
+		this.volumeSize = volumeSize;
+	}
+	
+	SmartPhone(String company, float size){
+		/*
+		 * this.company = company; 
+		 * this.size = size; 
+		 * this.color = "black";
+		 * this.volumeSize = 10;
+		 */
+		this("black", size, company, 10);
+		
+	}
+	
+	SmartPhone(String company){
+//		this.company = company;
+//		this.size = 4f;
+//		this.color = "black";
+//		this.volumeSize = 10;
+		this("black", 4f, company, 10);
+	}
+	
+	
 	
 	// 전화걸기
 	void call() {
