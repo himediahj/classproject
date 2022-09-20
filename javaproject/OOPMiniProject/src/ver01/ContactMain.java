@@ -24,7 +24,7 @@ public class ContactMain {
 	
 	System.out.print("생일 입력 : ");
 	c1.setBirthday(in.nextInt());
-	
+	in.nextLine();
 	System.out.print("그룹 입력 : ");
 	c1.setGroup(in.nextLine());
 	
