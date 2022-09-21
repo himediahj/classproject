@@ -21,10 +21,11 @@ public class ArrayTest7 {
 		// 0번지의 값과 1번지 값을 치환
 		
 		
-		// 1~4
-				// 0 <= r <=3
-				// 1 <= r <=4
+		
 		for(int i=0; i<10000 ; i++) {
+			// 1~4
+			// 0 <= r <=3
+			// 1 <= r <=4
 			int randomIndex = (int)(Math.random()*4) + 1 ;  
 			
 			String temp = null;
