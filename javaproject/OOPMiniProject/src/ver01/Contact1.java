@@ -2,7 +2,7 @@ package ver01;
 
 // Contact 클래스의 용도 ? => 데이터 저장
 // 인스턴스 생성 -> 변수의 메모리 생성 -> 데이터 저장
-public class Contact1 {
+ class Contact1 {
 
 	private String name; // 친구의 이름
 	private String phoneNumber; // 전화번호
