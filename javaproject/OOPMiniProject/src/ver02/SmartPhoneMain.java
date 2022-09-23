@@ -7,7 +7,19 @@ public class SmartPhoneMain {
 		SmartPhone smartPhone = SmartPhone.getInstance();
 		
 		smartPhone.insert();
+		smartPhone.insert();
+		smartPhone.insert();
+		smartPhone.insert();
+		smartPhone.insert();
+		smartPhone.insert();
+		smartPhone.insert();
+		smartPhone.insert();
+		smartPhone.insert();
+		smartPhone.insert();
+		smartPhone.print();
+		smartPhone.delete();
 		smartPhone.modify();
+		
 	}
 
 }
