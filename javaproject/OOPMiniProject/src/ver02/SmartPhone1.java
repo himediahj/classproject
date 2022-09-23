@@ -18,8 +18,8 @@ public class SmartPhone1 {
 		private int numOfContact1;	// 입력된 정보의 개수, 배열의 index 값으로 사용
 		Scanner sc;
 		
-		private SmartPhone1(int size){
-			contacts = new Contact1[size];
+		private SmartPhone1(int size){	// 초기화에 필요한 데이터 받기 위해 매개변수 정의한 생성자
+			contacts = new Contact1[size];	// 인스턴스 변수들 초기화..
 			numOfContact1 = 0;
 			sc = new Scanner(System.in);
 		}
@@ -27,9 +27,9 @@ public class SmartPhone1 {
 		// new SmartPhone1(100); 100개도 만들 수 있다! 
 		
 		
-		private static SmartPhone1 sp = new SmartPhone1(10);
+		private static SmartPhone1 sp = new SmartPhone1(10);	// 인스턴스 생성 전 static으로 미리 만들어놓는 거! (메모리에 올라간다). 메모리에 올라가있어서 인스턴스 생성 없이 바로 사용 가능
 		
-		public static SmartPhone1 getInstance() {
+		public static SmartPhone1 getInstance() {	// static으로 미리 만들어놓는다.. 
 			if(sp==null)
 				sp = new SmartPhone1(10);
 			return sp;
@@ -143,7 +143,7 @@ public class SmartPhone1 {
 				for(int i=searchIndex1 ; i<numOfContact1-1; i++) {
 					contacts[i] = contacts[i+1];
 				}
-				numOfContact1--;
+				numOfContact1--;	// -1 안해주면 빈칸 뒤에 새로 입력되잖아...
 				System.out.println("데이터가 삭제되었습니다.");
 			}
 		}
@@ -210,7 +210,7 @@ public class SmartPhone1 {
 			// 배열에 인스턴스의 참조값을 저장
 			
 			if(numOfContact1==contacts.length) {	
-				System.out.println("최대 저장 개수는 "+contacts+"개 입니다");
+				System.out.println("최대 저장 개수는 "+contacts.length+"개 입니다");
 				return;
 			}
 			
