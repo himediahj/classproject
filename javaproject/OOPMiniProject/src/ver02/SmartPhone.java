@@ -63,7 +63,7 @@ public class SmartPhone {
 
 	public void modify() {
 		System.out.println("수정할 이름을 찾습니다.");
-		System.out.println("이름을 입력하세요. > ");
+		System.out.print("이름을 입력하세요. > ");
 		String name = sc.nextLine();
 
 		int searchIndex = -1;
@@ -81,22 +81,22 @@ public class SmartPhone {
 
 		Contact contact = contacts[searchIndex];
 
-		System.out.print("수정하고자 하는 이름을 입력하세요");
+		System.out.print("수정하고자 하는 이름을 입력하세요 > ");
 		contact.setName(sc.nextLine());
 
-		System.out.print("수정하고자 하는 전화번호를 입력하세요");
+		System.out.print("수정하고자 하는 전화번호를 입력하세요 > ");
 		contact.setPhoneNumber(sc.nextLine());
 
-		System.out.print("수정하고자 하는 이메일을 입력하세요");
+		System.out.print("수정하고자 하는 이메일을 입력하세요 > ");
 		contact.setEmail(sc.nextLine());
 
-		System.out.print("수정하고자 하는 주소를 입력하세요");
+		System.out.print("수정하고자 하는 주소를 입력하세요 > ");
 		contact.setAddress(sc.nextLine());
 
-		System.out.print("수정하고자 하는 생일을 입력하세요");
+		System.out.print("수정하고자 하는 생일을 입력하세요 > ");
 		contact.setBirthday(sc.nextLine());
 
-		System.out.print("수정하고자 하는 그룹을 입력하세요");
+		System.out.print("수정하고자 하는 그룹을 입력하세요 > ");
 		contact.setGroup(sc.nextLine());
 		
 		System.out.println();
