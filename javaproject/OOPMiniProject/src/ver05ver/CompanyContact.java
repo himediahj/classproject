@@ -48,10 +48,5 @@ public class CompanyContact extends Contact {
 	}
 
 	
-	@Override
-	public void showData() {
-		// TODO Auto-generated method stub
-		
-	}
-	
+
 }

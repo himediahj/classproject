@@ -47,10 +47,6 @@ public class CustomerContact extends Contact {
 		this.position = position;
 	}
 
-	@Override
-	public void showData() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	
 }
