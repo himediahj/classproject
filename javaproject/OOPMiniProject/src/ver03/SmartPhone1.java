@@ -2,8 +2,6 @@ package ver03;
 
 import java.util.Scanner;
 
-import ver03.CompanyContact1;
-
 public class SmartPhone1 {
 		// 기능 클래스 : 속성을 가지지 않고 메소드들로만 정의된 클래스
 		// 여러개의 인스턴스가 생성될 필요 없다! => 싱글톤 패턴
