@@ -134,6 +134,44 @@ public class SmartPhone {
 		if (newGroup != null && newGroup.trim().length() > 0)
 			contacts.setGroup(newGroup);
 
+		if (contacts instanceof CompanyContact) {
+			CompanyContact companyContact = (CompanyContact) contacts;
+			
+			System.out.println("새로운 거래처회사이름을 입력해주세요. 현재값 : " + companyContact.getCompanyName());
+			String company = sc.nextLine();
+			if(company != null && company.trim().length()>0)
+				companyContact.setCompanyName(company);
+			
+			System.out.println("새로운 부서이름을 입력해주세요. 현재값 : " + companyContact.getDepartmentName());
+			String department = sc.nextLine();
+			if(department != null && department.trim().length()>0)
+				companyContact.setDepartmentName(department);
+			
+			System.out.println("새로운 직급을 입력해주세요. 현재값 : " + companyContact.getPosition());
+			String position = sc.nextLine();
+			if(position != null && position.trim().length()>0)
+				companyContact.setPosition(position);
+	
+		} else if (contacts instanceof CustomerContact) {
+			CustomerContact customerContact = (CustomerContact) contacts;
+			
+			System.out.println("새로운 거래처회사이름을 입력해주세요. 현재값 : " + customerContact.getCompanyName());
+			String company = sc.nextLine();
+			if(company != null && company.trim().length()>0)
+				customerContact.setCompanyName(company);
+			
+			System.out.println("새로운 거래품목을 입력해주세요. 현재값 : " + customerContact.getProduct());
+			String product = sc.nextLine();
+			if(product != null && product.trim().length()>0)
+				customerContact.setProduct(product);
+			
+			System.out.println("새로운 직급을 입력해주세요. 현재값 : " + customerContact.getPosition());
+			String position = sc.nextLine();
+			if(position != null && position.trim().length()>0)
+				customerContact.setPosition(position);
+			
+			
+		}
 		System.out.println("정보가 수정되었습니다.");
 
 	}
