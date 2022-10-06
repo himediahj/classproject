@@ -8,12 +8,12 @@ import java.util.regex.Pattern;
 public class SmartPhone {
 
 	private List<Contact> contact;
-	private int numOfContact;
+	
 	Scanner sc;
 
 	private SmartPhone() {
 		contact = new ArrayList<>();
-		numOfContact = 0;
+		
 		sc = new Scanner(System.in);
 	}
 
@@ -107,7 +107,7 @@ public class SmartPhone {
 
 					boolean check = false;
 
-					for (int i = 0; i < numOfContact; i++) {
+					for (int i = 0; i < contact.size(); i++) {
 						if (name.equals(contact.get(i).getName())) {
 							check = true;
 							break;
@@ -143,7 +143,7 @@ public class SmartPhone {
 
 					boolean check = false;
 
-					for (int i = 0; i < numOfContact; i++) {
+					for (int i = 0; i < contact.size(); i++) {
 						if (phoneNumber.equals(contact.get(i).getPhoneNumber())) {
 							check = true;
 							break;
@@ -167,7 +167,7 @@ public class SmartPhone {
 		name = sc.nextLine();
 
 		int searchIndex = -1;
-		for (int i = 0; i < numOfContact; i++) {
+		for (int i = 0; i < contact.size(); i++) {
 			if (contact.get(i).equals(name)) {
 				searchIndex = i;
 				break;
@@ -284,11 +284,11 @@ public class SmartPhone {
 
 	void printAllData() {
 		System.out.println("전체 데이터를 출력합니다");
-		if (numOfContact == 0) {
+		if (contact.size() == 0) {
 			System.out.println("저장된 정보가 없습니다");
 			return;
 		}
-		for (int i = 0; i < numOfContact; i++)
+		for (int i = 0; i < contact.size(); i++)
 			contact.get(i).printAll();
 	}
 
