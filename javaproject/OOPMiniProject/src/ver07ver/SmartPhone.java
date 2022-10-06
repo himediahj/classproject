@@ -101,7 +101,7 @@ public class SmartPhone {
 		while (true) {
 			try {
 				name = sc.nextLine();
-				if (name != null && name.trim().length() != 0) {
+				if (name != null && name.trim().length() > 0) {
 					if (!Pattern.matches("^[a-zA-Z가-힣]*$", name))
 						throw new Exception("이름에는 영문자와 한글만 입력이 가능합니다.");
 
@@ -136,10 +136,10 @@ public class SmartPhone {
 		while (true) {
 			try {
 				phoneNumber = sc.nextLine();
-				if (phoneNumber != null && phoneNumber.trim().length() != 0) {
+				if (phoneNumber != null && phoneNumber.trim().length() > 0) {
 
-					if (Pattern.matches("^01(?:0|1|[6-9]) - (?:\\d{3}|\\d{4}) - \\d{4}$", phoneNumber))
-						throw new Exception("000-000-0000 또는 000-0000-0000 형식으로 입력해야 합니다.");
+					if (!Pattern.matches("^\\d{3}-\\d{4}-\\d{4}+$", phoneNumber))
+						throw new Exception("000-0000-0000 형식으로 입력해야 합니다.");
 
 					boolean check = false;
 
