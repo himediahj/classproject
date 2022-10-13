@@ -164,3 +164,22 @@ select count(*) from dept;
 -- 직급의 수
 select count(distinct job) from emp;
 
+
+
+-- group by => 특정 컬럼 값 기준으로 그룹핑
+select * from emp;
+
+select sum(sal), count(*) from emp where deptno=10;
+select sum(sal), count(*) from emp where deptno=20;
+select sum(sal), count(*) from emp where deptno=30;
+select sum(sal), count(*) from emp where deptno=40;
+
+-- group by 로 묶은 컬럼만 select에 올 수 있음. 뒤쪽으로 집합함수 올 수 있구 
+select deptno, count(*), sum(sal), trunc(avg(sal)), max(sal), min(sal), count(comm) from emp group by deptno
+-- 부서별 평균급여가 2000 이상인 부서의 데이터만 출력
+having avg(sal) >= 2000;
+
+
+-- 직급별 
+select job, count(*)
+from emp group by job;
