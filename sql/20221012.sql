@@ -25,7 +25,7 @@
  select deptno, dname from dept;
  
  
- select sal, nvl(comm, 0) from emp;
+ select sal, nvl(comm, 0) from emp; -- null값을 0으로 치환
  -- null : 정해지지 않은 값! 
  -- select 표현 영역에서는 산술연산이 가능
  select sal + comm
