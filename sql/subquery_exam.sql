@@ -26,7 +26,7 @@ select ename, sal, deptno from emp
 where sal in (select min(sal) from emp group by deptno);
 
 -- 48. 담당업무가 ANALYST 인 사원보다 급여가 적으면서 업무가 ANALYST가 아닌 사원들을 표시(사원번호, 이름, 담당 업무, 급여)하시오.
-select empno, ename, job, sal from emp where sal < (select distinct sal from emp where job = 'ANALYST') and job != 'ANALYST';
+select empno, ename, job, sal from emp where sal < all (select distinct sal from emp where job = 'ANALYST') and job != 'ANALYST';
 
 -- 49. 부하직원이 없는 사원의 이름을 표시하시오.
 select e1.ename from emp e1 where not exists (select e2.mgr from emp e2 where e2.mgr = e1.empno);
@@ -44,7 +44,7 @@ where sal > (select avg(sal) from emp) order by sal;
 
 -- 53. 이름에 K가 포함된 사원과 같은 부서에서 일하는 사원의 사원 번호와 이름을 표시하시오.
 select empno, ename from emp
-where deptno in (select deptno from emp where ename like '%K%');
+where deptno in (select distinct deptno from emp where ename like '%K%');
 
 -- 54. 부서위치가 DALLAS인 사원의 이름과 부서번호 및 담당업무를 표시하시오
 select ename, deptno, job from emp
@@ -60,7 +60,7 @@ select empno, ename, job from emp where deptno = (select deptno from dept where 
 --     이름에 M이 포함된 사원과 같은 부서에서 근무하는 사원의 
 --     사원 번호, 이름, 급여를 표시하시오.
 select empno, ename, sal from emp
-where sal > (select avg(sal) from emp) and deptno in (select deptno from emp where ename like '%M%');
+where sal > (select avg(sal) from emp) and deptno in (select distinct deptno from emp where ename like '%M%');
 
 -- 58. 평균급여가 가장 적은 업무를 찾으시오.
 select job from emp group by job
