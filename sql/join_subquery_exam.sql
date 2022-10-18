@@ -1,6 +1,6 @@
 -- (5) 박지성이 구매한 도서의 출판사수
 
-select count(publisher) from book where bookid in ( select bookid from orders o join customer c on o.custid= c.custid where c.name='박지성');
+select count(distinct publisher) from book where bookid in ( select bookid from orders o join customer c on o.custid= c.custid where c.name='박지성');
 
 -- (6) 박지성이 구매한 도서의 이름, 가격, 정가와 판매가격의 차이
 select bookname, price, price-saleprice from book b, orders o
@@ -12,7 +12,7 @@ and o.custid = (select custid from customer c where c.name='박지성');
 select bookname from book where bookid not in (select bookid from orders o join customer c on o.custid=c.custid where c.name='박지성'); 
 
 -- (8) 주문하지 않은 고객의 이름(부속질의 사용)
-select name from customer where custid not in (select custid from orders);
+select name from customer where custid not in (select distinct custid from orders);
 
 -- (9) 주문금액의 총액과 주문의 평균금액
 select sum(saleprice) total, avg(saleprice) from orders;
@@ -37,12 +37,27 @@ and price-saleprice = (select max(price-saleprice) from orders o, book b where o
 select name from (select name, avg(saleprice) avg from customer c, orders o where c.custid=o.custid group by name) b
 where b.avg > (select avg(saleprice) from orders);
 
+select name
+from customer c, orders o
+where c.custid=o.custid
+group by name
+having avg(saleprice) > (select avg(saleprice) from orders);
+
+
 
 -- (1) 박지성이 구매한 도서의 출판사와 같은 출판사에서 도서를 구매한 고객의 이름
 select name from customer c, orders o, book b
 where c.custid=o.custid and o.bookid=b.bookid
 and b.publisher in (select publisher from book where bookid in (select bookid from orders o join customer c on o.custid=c.custid where c.name='박지성'))
 and c.name != '박지성';
+
+select name from customer c, orders o, book b
+where c.custid=o.custid and o.bookid=b.bookid 
+and publisher in (select distinct publisher from customer c, orders o, book b
+                  where c.custid=o.custid and o.bookid=b.bookid and name='박지성')
+and name <> '박지성';
+
+
 
 -- (2) 두 개 이상의 서로 다른 출판사에서 도서를 구매한 고객의 이름
 select c.name 
@@ -51,3 +66,11 @@ from customer c, (select custid, count (distinct publisher) num from book b, ord
                   group by custid) t
 where c.custid=t.custid
 and num >=2;
+
+
+
+select o.custid, name, count(distinct publisher)
+from orders o, customer c, book b
+where o.bookid=b.bookid and c.custid=o.custid
+group by o.custid, name
+having count(distinct publisher) > 1;
