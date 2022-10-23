@@ -15,4 +15,16 @@ public class InsertMemService {
 		
 		return result;
 	}
+	
+//	public boolean signUp(UserData userdata) {
+//		Connection conn = null;
+//		boolean result = false;
+//		
+//		conn = ConnectionProvider.getConnection();
+//		
+//		if(dao.insertMem(conn, userdata)==1)
+//			result = true;
+//		
+//		return result;
+//	}
 }
