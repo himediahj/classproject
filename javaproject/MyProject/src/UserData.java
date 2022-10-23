@@ -1,3 +1,4 @@
+import java.sql.Date;
 
 public class UserData {
 
@@ -5,6 +6,8 @@ public class UserData {
 	private String password;
 	private String nickname;
 	private String loc;
+	private Date joindate;
+	
 	
 	public UserData(String id, String password, String nickname, String loc) {
 		this.id = id;

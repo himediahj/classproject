@@ -9,7 +9,7 @@ public class UserDao {
 	public int insertMem(Connection conn, UserData userdata) throws SQLException {
 		;
 		int result = 0;
-		String sql = "Insert into user values (?, ?, ?, ?)";
+		String sql = "Insert into user values (?, ?, ?, ?, sysdate)";
 		PreparedStatement pstmt = null;
 
 		// try 묶어주고
@@ -67,7 +67,7 @@ public class UserDao {
 
 	}
 
-	// 회원수정 dao
+	// 회원수정 dao//  String 현재아이디에 LoginData의 id 넣는건가?
 	public int editMem(Connection conn, UserData userdata, String 현재아이디) throws SQLException {
 		int result = 0;
 		String sql = "update user set password=?, nickname=?, loc=? where id=" + "'" + 현재아이디 + "'";
