@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+    width: 100%;
+    
+}
+
+#top {
+    background-color: #f0f2f5;
+    height: 730px;
+    width: 100%;
+    
+}
+
+#innertop {
+    width: 1000px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 150px;
+}
+
+
+.main {
+    width: 500px;
+    height: 400px;   
+    float: left; 
+}
+
+.main>img {
+    width: 301px;
+    height: 106px;
+    margin-top: 7%;
+    margin-left: -5%;
+
+}
+.main>p {
+    font-size: 28px;
+    margin-top: -3%;
+}
+
+.login {
+    width: 396px;
+    height: 350px;
+    float: right;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px gray;
+    text-align: center;
+}
+
+.login>input[type=text] {
+    width: 365px;
+    height: 50px;
+    margin: 10px 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+}
+
+.login>input[type=text]:focus {
+    outline: 1px solid #1877f2;
+}
+
+.login>input[type=button] {
+    
+    height: 50px;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin: 10px 10px;
+}
+
+.login>a {
+    text-decoration-line: none;
+    color: #1877f2;
+    font-size: 14px;
+}
+
+.login>a:hover {
+    text-decoration: underline;
+}
+
+.login>a:visited {
+    text-decoration: none;
+}
+
+.login>hr {
+    background: #dadde1;
+    height: 1px;
+    border: 0;  
+    width: 365px;
+    margin: 14px auto;
+}
+
+.login+span {
+    font-size: 14px;
+    width: 400px;
+    float: right;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.login+span>a {
+    text-decoration-line: none;
+    font-weight: bold;
+    color: inherit;
+}
+
+.login+span>a:hover {
+    text-decoration: underline;
+}
+
+#bottom {
+    width: 1000px;
+    height: 140px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+#bottom>p {
+    line-height: 180%;
+    font-size: 12px;
+    color: gray;
+}
+
+#bottom>hr {
+    background: #dadde1;
+    height: 1px;
+    border: 0;
+}
+
+#bottom>:last-child {
+    font-size: 11px;
+}
