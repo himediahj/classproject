@@ -52,6 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
         pwInput.value = ''
         pw2Input.value = ''
         nameInput.value = ''
+        
+        const msg = document.querySelector('#userID+div')
+        const msg2 = document.querySelector('#userName+div')
+
+        msg.textContent = ''
+        msg2.textContent = ''
     })
 })
 
