@@ -93,8 +93,8 @@ const submitHandler = (event) => {
 
 
 
-    td4.addEventListener('click', (e) => {
-        e.target.parentNode.remove()
+    td4.addEventListener('click', (e) => {  
+        e.target.parentNode.remove()    // 삭제의 부모는 tr이 되어서 tr 전체삭제
     })
 
     td5.addEventListener('click', () => {
