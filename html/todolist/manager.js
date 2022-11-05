@@ -110,7 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (editPw.value !== editRepw.value) {
                     alert('비밀번호가 일치하지 않습니다')
                     return
-                } else {
+                } else if (!/[a-zA-Z가-힣]/.test(editName.value)) return
+                else {
                     td2.innerHTML = editPw.value
                     td3.innerHTML = editName.value
                 }
