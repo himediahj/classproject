@@ -64,6 +64,19 @@ const submitHandler = (event) => {
     const pw2Input = document.querySelector('#repw')
     const nameInput = document.querySelector('#userName')
     const memList = document.querySelector('#list')
+    
+    // 유효성 검사로 return false로 submit 제한 
+    if (idInput.value == '' || idInput.value == null) return    
+    else if (!/[a-zA-Z0-9]/.test(idInput.value)) return
+    else if (/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g.test(idInput.value)) return
+    else if (/\s/g.test(idInput.value)) return
+
+    if (pw2Input.value !== pwInput.value) return
+
+    if (nameInput.value == '' || nameInput.value == null) return
+    else if (/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g.test(nameInput.value)) return
+    else if (/[0-9]/g.test(nameInput.value)) return
+    else if (/\s/g.test(nameInput.value)) return
 
     const newTr = document.createElement('tr')
     const td0 = document.createElement('td')
