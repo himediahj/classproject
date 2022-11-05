@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
         pw2Input.value = ''
         nameInput.value = ''
     })
-    editTable.addEventListener('submit', editHandler)
 })
 
 let cnt = 1
