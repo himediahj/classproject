@@ -1,0 +1,7 @@
+- 이클립스 설정
+
+1. jdk 설치 : 17ver
+2. tomcat 다운로드 -> 압축 풀기 -> 이클립스 Server Environment 설정 (bin 폴더 포함하는 경로)
+window-server-runtime environment - add - 아파치 9.0버전 - next - directory 설정
+3. src > main > webapp > jsp, html, css, js... 파일 자원 작성
+   src > main > webapp > WEB-INF > web.xml (현재 프로젝트의 설정)
