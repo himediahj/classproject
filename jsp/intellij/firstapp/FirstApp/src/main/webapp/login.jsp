@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.time.LocalDate" %><%--
   Created by IntelliJ IDEA.
   User: cheoho-hi
   Date: 2022-11-07
@@ -12,5 +12,18 @@
 </head>
 <body>
   <h1>로그인 페이지</h1>
+    <%  // 자바 코드
+       // request.getParameter("내장객체라서 바로 request 사용 가능");
+        String userid = request.getParameter("userid");
+        String pw = request.getParameter("pw");
+
+        if(userid.equals(pw)){
+            session.setAttribute("loginId", userid);
+            response.sendRedirect("mypage.jsp");
+        } else {response.sendRedirect("login.html");}
+
+        LocalDate now = LocalDate.now();
+    %>
+    <%= now%>   <!-- %= 결과값 출력 print 개념-->
 </body>
 </html>
