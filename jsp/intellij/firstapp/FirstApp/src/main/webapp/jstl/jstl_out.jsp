@@ -24,7 +24,7 @@ ${members[0]}
 <br>
 ${members[1]} / ${members[1].name}  <!-- .name은 null이라 안 나옴 -->
 <br><br>
-<c:out value="${members[0].name}">
+<c:out value="${members[0].name}">  <!-- COOL0 -->
     <span class="red">입력정보 없음</span>
 </c:out>
 <br>
