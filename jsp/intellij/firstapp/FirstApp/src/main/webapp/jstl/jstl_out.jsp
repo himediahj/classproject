@@ -31,6 +31,6 @@ ${members[1]} / ${members[1].name}  <!-- .name은 null이라 안 나옴 -->
 <c:out value="${members[1].name}" escapeXml="false">
     <span class="red">입력정보 없음</span>    <!-- null이니까 default값으로 입력정보 없음이 나옴 -->
 </c:out>
-
+<!-- out의 기능 : 값이 null일 때 default값 나오게 하려고 -->
 </body>
 </html>
