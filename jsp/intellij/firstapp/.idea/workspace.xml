@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="587d630e-b079-4fde-98a0-4e3a14ebd10b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Todo/Todo/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Todo/Todo/src/main/java/com/firstcoding/todo/controller/TodoListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Todo/Todo/src/main/java/com/firstcoding/todo/controller/TodoModifyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Todo/Todo/src/main/java/com/firstcoding/todo/controller/TodoReadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Todo/Todo/src/main/java/com/firstcoding/todo/controller/TodoReigsterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Todo/Todo/src/main/java/com/firstcoding/todo/controller/TodoRemoveController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Todo/Todo/src/main/java/com/firstcoding/todo/domain/TodoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Todo/Todo/src/main/java/com/firstcoding/todo/service/TodoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/firstapp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../javaproject/DEPTManager/src/dept/dao/OracleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../javaproject/DEPTManager/src/dept/dao/OracleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../javaproject/FirstJava/src/chapter05/exam/Contact.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../javaproject/MyProject/src/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../javaproject/MyProject/src/UserData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Todo/Todo/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Todo/Todo/src/main/java/com/firstcoding/todo/TodoListController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Todo/Todo/src/main/java/com/firstcoding/todo/TodoModifyController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Todo/Todo/src/main/java/com/firstcoding/todo/TodoReadController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Todo/Todo/src/main/java/com/firstcoding/todo/TodoRegisterController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Todo/Todo/src/main/java/com/firstcoding/todo/TodoRemoveController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Todo/Todo/src/main/webapp/WEB-INF/Todo/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Todo/Todo/src/main/webapp/WEB-INF/Todo/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Todo/Todo/src/main/webapp/WEB-INF/Todo/modify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Todo/Todo/src/main/webapp/WEB-INF/Todo/modify.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Todo/Todo/src/main/webapp/WEB-INF/Todo/read.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Todo/Todo/src/main/webapp/WEB-INF/Todo/read.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Todo/Todo/src/main/webapp/WEB-INF/Todo/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Todo/Todo/src/main/webapp/WEB-INF/Todo/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Todo/Todo/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Todo/Todo/src/main/webapp/index.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2HO3h4NUVB3IrAFttY1FlmvS4S3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cheoho-hi/Documents/GitHub/classproject/jsp/intellij/firstapp&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="587d630e-b079-4fde-98a0-4e3a14ebd10b" name="Changes" comment="" />
+      <created>1668142418899</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668142418899</updated>
+      <workItem from="1668142421153" duration="470000" />
+      <workItem from="1668142920299" duration="103000" />
+      <workItem from="1668143033542" duration="679000" />
+      <workItem from="1668144513217" duration="1062000" />
+      <workItem from="1668145629735" duration="13000" />
+      <workItem from="1668145696111" duration="226000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
