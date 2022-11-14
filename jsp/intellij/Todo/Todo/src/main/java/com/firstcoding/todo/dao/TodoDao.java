@@ -15,7 +15,7 @@ public class TodoDao {
         @Cleanup ResultSet rs = stmt.executeQuery(sql);
 
         while(rs.next()){
-            list.add(new TodoDTO(rs.getLong(1), rs.getString(2), rs.getString(3), rs.getBoolean(4)));
+            list.add(rowTodo(rs));
         }
 
         return list;
@@ -26,12 +26,16 @@ public class TodoDao {
         String sql = "select * from todo where tno=?";
         @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
         pstmt.setLong(1, tno);
-        ResultSet rs = pstmt.executeQuery();
+        @Cleanup ResultSet rs = pstmt.executeQuery();
 
         if(rs.next()) {
-            todo = new TodoDTO(rs.getLong(1), rs.getString(2), rs.getString(3), rs.getBoolean(4));
+            todo = rowTodo(rs);
         }
         return todo;
+    }
+
+    private TodoDTO rowTodo(ResultSet rs) throws SQLException {
+        return new TodoDTO(rs.getLong(1), rs.getString(2), rs.getString(3), rs.getBoolean(4));
     }
 
     public int insert(Connection conn, String title, String dueDate) throws SQLException {
