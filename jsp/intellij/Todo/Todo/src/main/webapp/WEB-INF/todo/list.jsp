@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<h1>${title}</h1>
+<h1>Todo List</h1>
 
 <table>
   <tr>
@@ -28,10 +28,10 @@
     <td>완료여부</td>
   </tr>
 
-  <c:forEach var="todo" items="${todoList}">
-    <tr>
-      <td>${todo.tno}</td>
-      <td><a href="/todo/read?tno=${todo.tno}">${todo.todo}</a></td>
+  <c:forEach var="todo" items="${list}">
+    <tr style="<c:if test="${todo.finished eq 'true'}">text-decoration:line-through</c:if>">
+      <td><a href="/todo/read?tno=${todo.tno}">${todo.tno}</a></td>
+      <td>${todo.title}</td>
       <td>${todo.dueDate}</td>
       <td>${todo.finished ? '완료' : '진행중'}</td>
     </tr>
@@ -41,7 +41,7 @@
 
 </table>
 
-
+<br>
 <a href="/todo/register">Todo 등록하기</a>
 
 </body>

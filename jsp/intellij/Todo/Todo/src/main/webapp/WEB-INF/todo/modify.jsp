@@ -22,7 +22,7 @@
         </tr>
         <tr>
             <td>할일 </td>
-            <td><input type="text" name="todo" value="${todo.todo}" > </td>
+            <td><input type="text" name="title" value="${todo.title}" > </td>
         </tr>
         <tr>
             <td>기한 </td>
@@ -30,12 +30,12 @@
         </tr>
         <tr>
             <td>상태 </td>
-            <td><input type="checkbox" name="finished" value="1" ${todo.finished ? 'checked' : ''} > </td>
+            <td><input type="checkbox" name="finished" ${todo.finished ? 'checked' : ''} > </td>
         </tr>
         <tr>
             <td></td>
             <td>
-                <input type="reset">
+                <input type="reset" value="Reset">
                 <input type="submit" value="Modify">
             </td>
         </tr>
