@@ -15,7 +15,7 @@ public class TodoRemoveController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         log.info("todo remove ...");
 
-        TodoService service = new TodoService();
+        TodoService service = TodoService.getInstance();
         // 삭제하고자 하는 todo의 tno 값을 받는다
         int result = 0;
         try {

@@ -29,7 +29,7 @@ public class TodoRegisterController extends HttpServlet {
         // 한글 처리 : post
         request.setCharacterEncoding("utf-8");
 
-        TodoService service = new TodoService();
+        TodoService service = TodoService.getInstance();
 
         int result = 0;
         try {

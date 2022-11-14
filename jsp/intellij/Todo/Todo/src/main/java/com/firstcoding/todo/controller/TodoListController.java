@@ -17,7 +17,8 @@ public class TodoListController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         log.info("todo list ...");
 
-        TodoService service = new TodoService();
+        TodoService service = TodoService.getInstance();
+
         List<TodoDTO> list = null;
         try {
             list = service.getTodoList();

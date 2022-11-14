@@ -16,7 +16,7 @@ public class TodoModifyController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         log.info("modify get ...");
 
-        TodoService service = new TodoService();
+        TodoService service = TodoService.getInstance();
         TodoDTO todo = null;
         try {
             todo = service.getTodoRead(Long.parseLong(request.getParameter("tno")));
@@ -37,7 +37,7 @@ public class TodoModifyController extends HttpServlet {
         // 사용자 입력한 데이터 모두 받기
         request.setCharacterEncoding("utf-8");
 
-        TodoService service = new TodoService();
+        TodoService service = TodoService.getInstance();
 
         String tno = request.getParameter("tno");
         String title = request.getParameter("title");

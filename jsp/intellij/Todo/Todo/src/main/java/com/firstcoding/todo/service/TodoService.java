@@ -3,6 +3,7 @@ package com.firstcoding.todo.service;
 import com.firstcoding.todo.dao.TodoDao;
 import com.firstcoding.todo.domain.TodoDTO;
 import com.firstcoding.todo.util.ConnectionUtil;
+import com.sun.tools.javac.comp.Todo;
 import lombok.Cleanup;
 import lombok.extern.log4j.Log4j2;
 
@@ -12,6 +13,13 @@ import java.util.List;
 
 @Log4j2
 public class TodoService {
+    private TodoService(){}
+    private static TodoService instance = new TodoService();
+
+    public static TodoService getInstance(){
+        if(instance==null) instance = new TodoService();
+        return instance;
+    }
     private TodoDao dao = new TodoDao();
 
     public List<TodoDTO> getTodoList() throws Exception {

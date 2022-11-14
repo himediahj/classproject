@@ -16,7 +16,7 @@ public class TodoReadController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         log.info("read get...");
 
-        TodoService service = new TodoService();
+        TodoService service = TodoService.getInstance();
 
         TodoDTO todo = null;
 
