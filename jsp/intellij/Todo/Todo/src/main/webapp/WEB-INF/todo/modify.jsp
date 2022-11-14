@@ -33,10 +33,10 @@
             <td><input type="checkbox" name="finished" ${todo.finished ? 'checked' : ''} > </td>
         </tr>
         <tr>
-            <td></td>
+
             <td>
-                <input type="reset" value="Reset">
-                <input type="submit" value="Modify">
+                <input type="reset" value="Reset"></td>
+            <td>    <input type="submit" value="Modify">
             </td>
         </tr>
     </table>
