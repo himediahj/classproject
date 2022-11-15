@@ -26,6 +26,8 @@ public class DeptListController extends HttpServlet {
         } catch (Exception e) {
 
         }
+
+        // view 페이지로 결과 데이터 전달(공유)
         request.setAttribute("list", list);
 
         System.out.println(list);
