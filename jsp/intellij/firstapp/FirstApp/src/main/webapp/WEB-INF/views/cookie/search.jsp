@@ -12,8 +12,8 @@
 </head>
 <body>
     <h1>쿠키 값 검색</h1>
-    검색 쿠키 이름 : ${param.cname}<br>
-    쿠키 검색 결과 : ${result}
+    검색 쿠키 이름 : ${param.cname}<br>   <!-- userid -->
+    쿠키 검색 결과 : ${result}            <!-- cool -->
     <br>
     <a href="create">쿠키 생성</a>
 </body>
