@@ -15,7 +15,6 @@ import java.util.List;
 public class TodoListController {
 
     @GetMapping("/list")
-    public String list(){
-       return "/todo/list";
+    public void list(){
     }
 }
