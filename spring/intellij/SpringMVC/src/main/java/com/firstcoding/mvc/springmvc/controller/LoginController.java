@@ -23,7 +23,7 @@ public class LoginController {
 
     //@RequestMapping(method = RequestMethod.POST)
     @PostMapping
-    public String Login(String uid, String pw, String p, // @RequestParam(value = "p", required = true) String page -> 파라미터 p 값이 필수로 있어야하니까 에러 페이지 뜸!
+    public String Login(String uid, String pw, String p, // @RequestParam(value = "p", required = true) String page -> 파라미터 p가 필수로 있어야하니까 에러 페이지 뜸!
                         @RequestParam(value = "p", defaultValue = "1") String page, // list?pageNo=1 로 default 설정할 때 사용
                         HttpServletRequest request,
                         HttpServletResponse response,
