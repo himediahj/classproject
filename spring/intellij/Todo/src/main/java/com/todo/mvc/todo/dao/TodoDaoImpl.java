@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.ArrayList;
 
 public class TodoDaoImpl implements TodoDao {
     @Override
@@ -23,7 +24,7 @@ public class TodoDaoImpl implements TodoDao {
 
     @Override
     public List<TodoDTO> selectAll(Connection conn) throws SQLException {
-        List<TodoDTO> list = null;
+        List<TodoDTO> list = new ArrayList<>();
         String sql = "select * from todo";
         @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
         @Cleanup ResultSet rs = pstmt.executeQuery();
