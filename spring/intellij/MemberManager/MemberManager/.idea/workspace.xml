@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d3dbbce8-18f2-41ff-ad9d-56ba5b532e1e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/java/com/todo/todospring/HelloServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/java/com/todo/todospring/controller/IndexController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/java/com/todo/todospring/controller/TodoListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/java/com/todo/todospring/dao/TodoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/java/com/todo/todospring/dao/TodoDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/java/com/todo/todospring/dao/TodoDaoOld.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/java/com/todo/todospring/domain/TodoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/java/com/todo/todospring/service/TodoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/java/com/todo/todospring/service/TodoServiceOld.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/java/com/todo/todospring/util/ConnectionProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/webapp/WEB-INF/spring/root-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/webapp/WEB-INF/spring/servlet-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/webapp/WEB-INF/views/todo/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/webapp/WEB-INF/views/todo/modify.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/webapp/WEB-INF/views/todo/read.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/webapp/WEB-INF/views/todo/register.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TodoSpring/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaproject/DEPTManager/src/dept/dao/OracleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../javaproject/DEPTManager/src/dept/dao/OracleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaproject/FirstJava/src/chapter05/exam/Contact.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaproject/MyProject/src/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../javaproject/MyProject/src/UserData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../jsp/intellij/Todo/Todo/src/main/java/com/firstcoding/todo/controller/TodoRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../jsp/intellij/Todo/Todo/src/main/java/com/firstcoding/todo/controller/TodoRegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../jsp/intellij/firstapp/FirstApp/src/main/java/com/firstcoding/firstapp/filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../jsp/intellij/firstapp/FirstApp/src/main/java/com/firstcoding/firstapp/filter/LoginCheckFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringMVC/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../SpringMVC/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Todo/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Todo/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Todo/src/main/java/com/todo/mvc/todo/controller/TodoListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Todo/src/main/java/com/todo/mvc/todo/controller/TodoListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Todo/src/main/java/com/todo/mvc/todo/controller/TodoRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Todo/src/main/java/com/todo/mvc/todo/controller/TodoRegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Todo/src/main/java/com/todo/mvc/todo/service/TodoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Todo/src/main/java/com/todo/mvc/todo/service/TodoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Todo/src/main/webapp/WEB-INF/views/todo/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Todo/src/main/webapp/WEB-INF/views/todo/list.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2HbuzIShP2s4YUcGqbeclxV2T1s" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cheoho-hi/Documents/GitHub/classproject/spring/intellij/MemberManager/MemberManager/src/main/resources&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;8b98e98b9545964531d69a613cbd97b9&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cheoho-hi\Documents\GitHub\classproject\spring\intellij\MemberManager\MemberManager\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.di.main" />
+      <recent name="org.example.di.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainForSpring3">
+    <configuration name="MainForAssembler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.di.main.MainForAssembler" />
+      <module name="MemberManager.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.di.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainForSpring" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.di.main.MainForSpring" />
+      <module name="MemberManager.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.di.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainForSpring2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.di.main.MainForSpring2" />
+      <module name="MemberManager.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.di.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainForSpring3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.di.main.MainForSpring3" />
+      <module name="MemberManager.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.di.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainForSpring3" />
+        <item itemvalue="Application.MainForSpring2" />
+        <item itemvalue="Application.MainForSpring" />
+        <item itemvalue="Application.MainForAssembler" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d3dbbce8-18f2-41ff-ad9d-56ba5b532e1e" name="Changes" comment="" />
+      <created>1668566364713</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668566364713</updated>
+      <workItem from="1668566365864" duration="13343000" />
+      <workItem from="1668737004682" duration="1027000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
