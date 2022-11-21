@@ -44,7 +44,13 @@ public class LoginController {
 
         log.info("paramMap => " + paramMap);    // {uid=cool, pw=123456789}
 
-        return "login/login";
+
+
+        ////////////////////// AuthCheckInterceptor
+        request.getSession().setAttribute("loginInfo", uid);
+
+        // return "login/login";
+        return "redirect:/mypage/mypage1";
     }
 
     @GetMapping("/info")    // http://localhost:8080/login/info
