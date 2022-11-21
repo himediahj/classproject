@@ -8,15 +8,8 @@
       <change beforePath="$PROJECT_DIR$/../../../javaproject/DEPTManager/src/dept/dao/OracleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../javaproject/DEPTManager/src/dept/dao/OracleDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../javaproject/FirstJava/src/chapter05/exam/Contact.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../javaproject/MyProject/src/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../javaproject/MyProject/src/UserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jsp/intellij/Todo/Todo/src/main/java/com/firstcoding/todo/controller/TodoRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jsp/intellij/Todo/Todo/src/main/java/com/firstcoding/todo/controller/TodoRegisterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../jsp/intellij/firstapp/FirstApp/src/main/java/com/firstcoding/firstapp/filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jsp/intellij/firstapp/FirstApp/src/main/java/com/firstcoding/firstapp/filter/LoginCheckFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +60,8 @@
     "last_opened_file_path": "C:/Users/cheoho-hi/Documents/GitHub/classproject/spring/intellij/TodoSpring/src/main/webapp/WEB-INF/views",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "spring.configuration.checksum": "7b6636d49cb0a72be55c8ce56779deab"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -184,7 +178,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668732147940</updated>
-      <workItem from="1668732149273" duration="12414000" />
+      <workItem from="1668732149273" duration="12427000" />
+      <workItem from="1668990706683" duration="4345000" />
     </task>
     <servers />
   </component>
