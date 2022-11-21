@@ -10,4 +10,6 @@ public interface MemberDao {
     public int insertMem(Connection conn, MemberDTO memberDTO) throws SQLException;
 
     public MemberDTO searchByUidPw(Connection conn, String uid, String pw) throws SQLException;
+
+    public int updateUUIDByIdx(Connection conn, String uuid, int idx) throws SQLException;
 }

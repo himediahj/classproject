@@ -36,4 +36,9 @@ public class MemberService {
         @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
         return dao.searchByUidPw(conn, uid, pw);
     }
+
+    public int updateUUID(int idx, String uuid) throws SQLException {
+        @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
+        return dao.updateUUIDByIdx(conn, uuid, idx);
+    }
 }

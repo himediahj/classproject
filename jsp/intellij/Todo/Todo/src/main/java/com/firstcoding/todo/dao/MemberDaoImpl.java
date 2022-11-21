@@ -35,4 +35,14 @@ public class MemberDaoImpl implements MemberDao {
         }
         return member;
     }
+
+    @Override
+    public int updateUUIDByIdx(Connection conn, String uuid, int idx) throws SQLException {
+        String sql = "update member set uuid=? where idx=?";
+        @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
+        pstmt.setString(1, uuid);
+        pstmt.setInt(2, idx);
+        int result = pstmt.executeUpdate();
+        return result;
+    }
 }

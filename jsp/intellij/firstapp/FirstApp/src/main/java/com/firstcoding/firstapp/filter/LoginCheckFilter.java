@@ -33,6 +33,7 @@ public class LoginCheckFilter implements Filter {
         // 현재 세션 구하기
         HttpSession session = req.getSession();
 
+        // 현재 사용자의 HttpSession에 로그인 정보가 없는 경우에만 쿠키를 확인
         if(session.getAttribute("loginInfo") == null){
             // 쿠키 체크 : uuid
             Cookie cookie = findCookie(req.getCookies(), "uuid");
@@ -52,7 +53,7 @@ public class LoginCheckFilter implements Filter {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                chain.doFilter(request, response);  // 55행 밑으로 처리되면 안되니까
+                chain.doFilter(request, response);  // 56행 밑으로 처리되면 안되니까
                 return;
             }
 
