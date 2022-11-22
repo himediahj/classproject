@@ -5,12 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27738817-d5d2-4111-a2d1-52fe2d5c44e5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/controller/LogoutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/controller/MemberRegController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/dao/MemberDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/dao/MemberDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/domain/LoginInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/domain/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/domain/MemberRegRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/interceptor/AuthCheckInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/service/LoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/service/MemberRegService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/loginForm.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/regForm.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../javaproject/DEPTManager/src/dept/dao/OracleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../javaproject/DEPTManager/src/dept/dao/OracleDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../javaproject/FirstJava/src/chapter05/exam/Contact.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../javaproject/MyProject/src/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../javaproject/MyProject/src/UserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jsp/intellij/firstapp/FirstApp/src/main/java/com/firstcoding/firstapp/filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jsp/intellij/firstapp/FirstApp/src/main/java/com/firstcoding/firstapp/filter/LoginCheckFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/servlet-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +47,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Jsp File" />
         <option value="Interface" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -51,20 +72,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/cheoho-hi/Documents/GitHub/classproject/spring/intellij/TodoSpring/src/main/webapp/WEB-INF/views",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "spring.configuration.checksum": "7b6636d49cb0a72be55c8ce56779deab"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cheoho-hi/Documents/GitHub/classproject/spring/intellij/Todo&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;7b6636d49cb0a72be55c8ce56779deab&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.todo.todospring.dao" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\cheoho-hi\Documents\GitHub\classproject\spring\intellij\TodoSpring\src\main\webapp\WEB-INF\views" />
       <recent name="C:\Users\cheoho-hi\Documents\GitHub\classproject\spring\intellij\TodoSpring\src\main\resources" />
@@ -179,7 +203,8 @@
       <option name="presentableId" value="Default" />
       <updated>1668732147940</updated>
       <workItem from="1668732149273" duration="12427000" />
-      <workItem from="1668990706683" duration="4345000" />
+      <workItem from="1668990706683" duration="5098000" />
+      <workItem from="1669077509525" duration="12470000" />
     </task>
     <servers />
   </component>
