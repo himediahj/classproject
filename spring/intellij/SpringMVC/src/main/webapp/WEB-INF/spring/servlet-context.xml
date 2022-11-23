@@ -31,6 +31,16 @@ https://www.springframework.org/schema/context/spring-context.xsd">
         </mvc:interceptor>
     </mvc:interceptors>
 
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="formatters">
+            <set>
+                <bean class="com.firstcoding.mvc.springmvc.formatter.LocalDateFormatter"></bean>
+            </set>
+        </property>
+    </bean>
+
+    <mvc:annotation-driven conversion-service="conversionService"/>
+
     <mvc:resources mapping="/resources/**" location="/resources/"></mvc:resources>   <!-- /resources/image/mini.jpg 요청 들어오면 location에 있는 directory 찾아서 정적 resource 그대로 보여줌 (프론트 컨트롤러 가지 않음) -->
     <mvc:resources mapping="/css/**" location="/css/"></mvc:resources>
     <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
