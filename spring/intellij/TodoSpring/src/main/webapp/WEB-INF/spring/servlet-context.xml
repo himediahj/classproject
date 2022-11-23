@@ -35,4 +35,15 @@ https://www.springframework.org/schema/context/spring-context.xsd">
             <bean class="com.todo.todospring.interceptor.AuthCheckInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
+
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="formatters">
+            <set>
+                <bean class="com.todo.todospring.formatter.LocalDateFormatter"></bean>
+                <bean class="com.todo.todospring.formatter.CheckBoxFormatter"></bean>
+            </set>
+        </property>
+    </bean>
+
+    <mvc:annotation-driven conversion-service="conversionService"/>
 </beans>

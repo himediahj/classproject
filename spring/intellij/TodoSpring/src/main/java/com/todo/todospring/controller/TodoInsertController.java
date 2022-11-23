@@ -28,17 +28,19 @@ public class TodoInsertController {
     }
 
     @PostMapping
-    public String insert(@RequestParam("title") String title, @RequestParam("dueDate") String dueDate){
-        // 사용자가 입력한 데이터를 받아와야 합니다!
-        log.info(title);
-        log.info(dueDate);
+    public String insert(   // @RequestParam("title") String title, @RequestParam("dueDate") String dueDate
+                            TodoDTO todoDTO ){
 
-        TodoDTO todoDTO = TodoDTO.builder()
+        log.info(todoDTO.getTitle());
+        log.info(todoDTO.getDueDate());
+        log.info(todoDTO);
+
+/*        TodoDTO todoDTO = TodoDTO.builder()
                 .title(title)
                 .dueDate(LocalDate.parse(dueDate))
-                .build();
+                .build();*/
 
-        log.info(todoDTO);
+        log.info("todoDTO => " + todoDTO);
 
         todoService.getTodoRegister(todoDTO);
 
