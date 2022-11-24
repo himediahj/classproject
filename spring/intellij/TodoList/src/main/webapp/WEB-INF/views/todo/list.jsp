@@ -12,6 +12,7 @@
     <title>Title</title>
     <style>
         td {
+            text-align: center;
             padding: 5px;
         }
     </style>
@@ -30,7 +31,7 @@
             <td><a href="/todo/read?tno=${todo.tno}">${todo.tno}</a></td>
             <td>${todo.title}</td>
             <td>${todo.dueDate}</td>
-            <td>${todo.finished}</td>
+            <td>${todo.finished? '완료':'진행중'}</td>
         </tr>
     </c:forEach>
 </table>
