@@ -9,6 +9,11 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        li {
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
 <h1>Todo Project</h1>
@@ -16,6 +21,7 @@
 <ul>
     <li>프로젝트 이름 : Todo List</li>
     <li>기능 : </li>
+    <li><a href="/todo/list">Todo List</a></li>
 </ul>
 </body>
 </html>
