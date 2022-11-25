@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
@@ -25,7 +26,13 @@
     </tr>
     <tr>
       <td>매니저사번</td>
-      <td><input type="number" name="mgr"></td>
+      <td>
+        <select name="mgr">
+          <c:forEach items="${empList}" var="emp">
+            <option value="${emp.empno}">${emp.ename}</option>
+          </c:forEach>
+        </select>
+      </td>
     </tr>
     <tr>
       <td>입사일</td>
@@ -41,7 +48,13 @@
     </tr>
     <tr>
       <td>부서번호</td>
-      <td><input type="number" name="deptno"></td>
+      <td>
+        <select name="deptno">
+          <c:forEach items="${deptList}" var="dept">
+            <option value="${dept.deptno}">${dept.dname}</option>
+          </c:forEach>
+        </select>
+      </td>
     </tr>
     <tr><td></td>
       <td><input type="submit" value="등록하기"></td>

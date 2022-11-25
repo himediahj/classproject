@@ -15,7 +15,7 @@ public class EmpDTO {
     private String job;
     private int mgr;
     private LocalDate hiredate;
-    private int sal;
-    private int comm;
+    private double sal;
+    private double comm;
     private int deptno;
 }
