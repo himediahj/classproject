@@ -18,18 +18,18 @@
         <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/project"></property>
         <property name="username" value="scott"></property>
         <property name="password" value="tiger"></property>
-<property name="dataSourceProperties">
-<props>
-    <prop key="cachePrepStmts">true</prop>
-    <prop key="prepStmtCacheSize">250</prop>
-    <prop key="prepStmtCacheSqlLimit">2048</prop>
-</props>
-</property>
+        <property name="dataSourceProperties">
+            <props>
+            <prop key="cachePrepStmts">true</prop>
+            <prop key="prepStmtCacheSize">250</prop>
+            <prop key="prepStmtCacheSqlLimit">2048</prop>
+            </props>
+        </property>
     </bean>
 
-<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
- <constructor-arg ref="hikariConfig" />
-</bean>
+    <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+        <constructor-arg ref="hikariConfig" />
+    </bean>
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
@@ -37,4 +37,12 @@
     </bean>
 
     <mybatis:scan base-package="com.app.manager.mapper"></mybatis:scan>
+
+
+    <!-- 트랜젝션 설정 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>
