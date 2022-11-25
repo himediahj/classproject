@@ -1,13 +1,12 @@
 package com.spring.todolist.service;
 
-import com.spring.todolist.dao.MemberDao;
 import com.spring.todolist.domain.Member;
 import com.spring.todolist.domain.MemberRegRequest;
-import com.spring.todolist.util.ConnectionProvider;
-import lombok.Cleanup;
+import com.spring.todolist.mapper.MemberMapper;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
@@ -16,10 +15,10 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 @Service
-@Log4j2
 public class MemberRegService {
-    @Autowired
-    private MemberDao memberDao;
+
+    @Autowired(required = false)
+    private MemberMapper memberMapper;
 
     public int memberReg(MemberRegRequest regRequest, HttpServletRequest request) throws SQLException {
 
@@ -32,7 +31,7 @@ public class MemberRegService {
 
             // 시스템 절대 경로
             String dirRealPath = request.getSession().getServletContext().getRealPath(dirURI);
-            log.info(dirRealPath);
+            //log.info(dirRealPath);
 
             newFileName = System.nanoTime() + regRequest.getUphoto().getOriginalFilename(); // 사진 이름 겹칠 수 있으니까
 
@@ -48,9 +47,9 @@ public class MemberRegService {
         if(newFileName != null){
             member.setUphoto(newFileName);
         }
-        log.info(member);
+        //log.info(member);
 
-        @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
-        return memberDao.insertMem(conn, member);
+
+        return memberMapper.insertMem(member);
     }
 }

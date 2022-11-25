@@ -1,3 +1,4 @@
+/*
 package com.spring.todolist.dao;
 
 import com.spring.todolist.domain.TodoDTO;
@@ -67,3 +68,4 @@ public class TodoDaoImpl implements TodoDao {
         return pstmt.executeUpdate();
     }
 }
+*/

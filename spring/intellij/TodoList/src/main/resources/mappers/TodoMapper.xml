@@ -1,0 +1,25 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.todolist.mapper.TodoMapper">
+    <select id="selectAll" resultType="com.spring.todolist.domain.TodoDTO">
+        select * from todo
+    </select>
+
+    <select id="selectBy" resultType="com.spring.todolist.domain.TodoDTO">
+        select * from todo where tno=#{tno}
+    </select>
+
+    <insert id="insert" parameterType="com.spring.todolist.domain.TodoDTO">
+        insert into todo (title, dueDate) values (#{title}, #{dueDate})
+    </insert>
+
+    <update id="update" parameterType="com.spring.todolist.domain.TodoDTO">
+        update todo set title=#{title}, dueDate=#{dueDate}, finished=#{finished} where tno=#{tno}
+    </update>
+
+    <delete id="delete">
+        delete from todo where tno=#{no}
+    </delete>
+</mapper>

@@ -1,3 +1,4 @@
+/*
 package com.spring.todolist.dao;
 
 import com.spring.todolist.domain.Member;
@@ -11,3 +12,4 @@ public interface MemberDao {
 
     Member selectByIdPw(Connection conn, String uid, String pw) throws SQLException;
 }
+*/

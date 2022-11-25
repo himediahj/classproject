@@ -1,20 +1,20 @@
 package com.spring.todolist.controller;
 
-import com.spring.todolist.service.TodoService;
+import com.spring.todolist.service.todo.TodoListService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class TodoListController {
-    private final TodoService todoService;
+    private final TodoListService todoListService;
 
-    public TodoListController(TodoService todoService) {
-        this.todoService = todoService;
+    public TodoListController(TodoListService todoListService) {
+        this.todoListService = todoListService;
     }
 
     @RequestMapping("/todo/list")
     public void getTodoList(Model model){
-        model.addAttribute("list", todoService.getTodoList());
+        model.addAttribute("list", todoListService.getList());
     }
 }

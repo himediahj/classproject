@@ -1,3 +1,4 @@
+/*
 package com.spring.todolist.dao;
 
 import com.spring.todolist.domain.Member;
@@ -42,3 +43,4 @@ public class MemberDaoImpl implements MemberDao {
         return member;
     }
 }
+*/

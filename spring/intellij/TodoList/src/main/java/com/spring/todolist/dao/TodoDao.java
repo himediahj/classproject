@@ -1,3 +1,4 @@
+/*
 package com.spring.todolist.dao;
 
 import com.spring.todolist.domain.TodoDTO;
@@ -13,3 +14,4 @@ public interface TodoDao {
     public int update(Connection conn, TodoDTO todoDTO) throws SQLException;
     public int delete(Connection conn, long tno) throws SQLException;
 }
+*/

@@ -15,14 +15,14 @@ import java.sql.SQLException;
 @RequestMapping("/member/register")
 public class MemberRegController {
     @Autowired
-    private MemberRegService regService;
+    private MemberRegService memberRegService;
 
     @GetMapping
     public String getRegForm(){return "member/regForm";}
 
     @PostMapping
     public String reg(MemberRegRequest regRequest, HttpServletRequest request) throws SQLException {
-        regService.memberReg(regRequest, request);
+        memberRegService.memberReg(regRequest, request);
         return "redirect:/index.jsp";
     }
 }

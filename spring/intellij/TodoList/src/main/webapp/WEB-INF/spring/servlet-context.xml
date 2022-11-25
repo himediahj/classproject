@@ -11,7 +11,7 @@ http://www.springframework.org/schema/context
 https://www.springframework.org/schema/context/spring-context.xsd">
 
     <mvc:annotation-driven></mvc:annotation-driven>
-    <context:component-scan base-package="com.spring.todolist"></context:component-scan>
+    <context:component-scan base-package="com.spring.todolist.controller"></context:component-scan>
 
     <mvc:resources mapping="/uploadfile/**" location="/uploadfile/"></mvc:resources>
 
@@ -26,6 +26,12 @@ https://www.springframework.org/schema/context/spring-context.xsd">
     </bean>
 
     <!-- 로그인 체크하는 인터셉터 등록 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/todo/**"/>
+            <bean class="com.spring.todolist.interceptor.AuthCheckInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="formatters">
