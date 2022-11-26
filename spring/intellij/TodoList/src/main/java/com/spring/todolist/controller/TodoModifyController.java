@@ -6,10 +6,14 @@ import com.spring.todolist.service.todo.TodoReadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.validation.Valid;
+
 
 @Controller
 @RequestMapping("/todo/modify")
@@ -31,7 +35,12 @@ public class TodoModifyController {
     }
 
     @PostMapping
-    public String modifyPost(TodoDTO todoDTO){
+    public String modifyPost(@Valid TodoDTO todoDTO, BindingResult bindingResult, Model model, @RequestParam("tno") int tno){
+
+        if(bindingResult.hasErrors()){
+            model.addAttribute("todo", todoReadService.getTodo(tno));
+            return "todo/modify";
+        }
         todoEditService.editTodo(todoDTO);
         return "redirect:/todo/list";
     }

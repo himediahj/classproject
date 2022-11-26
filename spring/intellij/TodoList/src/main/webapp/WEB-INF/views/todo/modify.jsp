@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: cheoho-hi
@@ -13,7 +14,8 @@
 </head>
 <body>
 <h1>Todo Modify</h1>
-<form method="post">
+<%--@elvariable id="todoDTO" type="com.spring.todolist.domain.TodoDTO"--%>
+<form:form modelAttribute="todoDTO" method="post">
 <table>
     <tr>
         <td>번호</td>
@@ -22,10 +24,12 @@
     <tr>
         <td>할일</td>
         <td><input type="text" name="title" value="${todo.title}"></td>
+        <td><form:errors path="title"/> </td>
     </tr>
     <tr>
         <td>기한</td>
         <td><input type="date" name="dueDate" value="${todo.dueDate}"></td>
+        <td><form:errors path="dueDate"/> </td>
     </tr>
     <tr>
         <td>상태</td>
@@ -36,7 +40,8 @@
         <td><input type="reset"><input type="submit" value="수정"></td>
     </tr>
 </table>
-</form>
+</form:form>
+
 <form action="/todo/remove" method="post">
     <input type="hidden" name="tno" value="${param.tno}">
     <input type="submit" value="삭제">
