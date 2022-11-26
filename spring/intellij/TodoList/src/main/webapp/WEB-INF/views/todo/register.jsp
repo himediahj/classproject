@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: cheoho-hi
@@ -12,21 +13,24 @@
 </head>
 <body>
 <h1>Todo Register</h1>
-<form method="post">
+<%--@elvariable id="todoDTO" type="com.spring.todolist.domain.TodoDTO"--%>
+<form:form modelAttribute="todoDTO" method="post">
     <table>
         <tr>
             <td>할일</td>
             <td><input type="text" name="title"></td>
+            <td><form:errors path="title"/></td>
         </tr>
         <tr>
             <td>기한</td>
             <td><input type="date" name="dueDate"></td>
+            <td><form:errors path="dueDate"/></td>
         </tr>
         <tr>
             <td></td>
             <td><input type="reset"><input type="submit" value="등록"></td>
         </tr>
     </table>
-</form>
+</form:form>
 </body>
 </html>

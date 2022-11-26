@@ -33,7 +33,9 @@ public class TodoInsertController {
 
         if(bindingResult.hasErrors()){
             log.info(bindingResult.getAllErrors());
+            return "todo/register";
         }
+
         return "redirect:/todo/list";
     }
 }
