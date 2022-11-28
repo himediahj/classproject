@@ -10,5 +10,6 @@ import lombok.*;
 @Builder
 public class TodoSearchOption {
     // private String searchType;
+    private String ing;
     private String keyword;
 }

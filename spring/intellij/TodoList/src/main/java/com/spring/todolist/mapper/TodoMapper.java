@@ -14,5 +14,6 @@ public interface TodoMapper {
     int update(TodoDTO todoDTO);
     int delete(long tno);
 
-    List<TodoDTO> selectByTitle(TodoSearchOption todoSearchOption);
+    List<TodoDTO> selectByOption(TodoSearchOption todoSearchOption);
+
 }

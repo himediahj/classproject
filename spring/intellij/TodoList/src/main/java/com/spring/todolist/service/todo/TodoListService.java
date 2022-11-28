@@ -22,6 +22,7 @@ public class TodoListService {
 
     public List<TodoDTO> getSearchList(TodoSearchOption searchOption){
         log.info("getSearchList Service ...");
-        return todoMapper.selectByTitle(searchOption);
+        return todoMapper.selectByOption(searchOption);
     }
+
 }

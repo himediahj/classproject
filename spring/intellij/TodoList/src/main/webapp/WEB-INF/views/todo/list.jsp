@@ -44,7 +44,7 @@
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <input class="form-control mr-sm-2" type="text" name="keyword" placeholder="할 일 검색">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
@@ -53,6 +53,7 @@
     <main role="main" class="container">
 
 <h1>Todo List</h1>
+
 <table class="table table-striped">
     <thead class="thead-dark">
     <tr>
@@ -73,6 +74,7 @@
 <br>
 <button type="button" class="btn btn-primary" onclick="location.href='/todo/register'">Todo 등록하기</button>
         <button type="button" class="btn btn-dark" onclick="location.href='/logout'">로그아웃</button>
+        <div style="float: right"><form><button type="submit" class="btn btn-danger" name="ing" value="진행중">진행중</button></form> </div>
     </main>
 
 </body>

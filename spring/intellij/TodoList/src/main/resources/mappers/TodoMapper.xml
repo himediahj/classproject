@@ -31,6 +31,9 @@
             <if test="keyword != null">
                 title like concat('%', #{keyword}, '%')
             </if>
+            <if test="ing == '진행중'">
+                finished = 0
+            </if>
         </where>
     </select>
 </mapper>
