@@ -21,7 +21,7 @@ public class DeptDTO {
     @NotEmpty   // 문자열이 비어있지 않은 상태를 체크, List의 경우는 요소의 개수가 비어있지않은 걸 체크
     private String dname;
 
-    @NotEmpty
+    @NotEmpty   // "" fail  " " pass
     private String loc;
 }
 
