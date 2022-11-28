@@ -25,12 +25,12 @@ public class MemberRegController {
     public String getRegForm(){return "member/regForm";}
 
     @PostMapping
-    public String reg(MemberRegRequest regRequest, HttpServletRequest request,
-                      @Valid MemberRegRequest memberRegRequest, Errors errors, Model model) throws SQLException {
+    public String reg(HttpServletRequest request,
+                      @Valid MemberRegRequest regRequest, Errors errors, Model model) throws SQLException {
 
         if(errors.hasErrors()){
             // 회원가입 실패시 입력 데이터 값 유지
-            model.addAttribute("memData",memberRegRequest);
+            model.addAttribute("memData",regRequest);
 
             // 유효성 통과 못한 필드와 메시지를 핸들링
             Map<String, String> validatorResult = memberRegService.validateHandling(errors);
