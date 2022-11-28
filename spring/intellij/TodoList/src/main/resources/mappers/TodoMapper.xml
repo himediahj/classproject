@@ -22,4 +22,15 @@
     <delete id="delete">
         delete from todo where tno=#{no}
     </delete>
+
+
+
+    <select id="selectByTitle" parameterType="com.spring.todolist.domain.TodoSearchOption" resultType="com.spring.todolist.domain.TodoDTO">
+        select * from todo
+        <where>
+            <if test="keyword != null">
+                title like concat('%', #{keyword}, '%')
+            </if>
+        </where>
+    </select>
 </mapper>

@@ -1,6 +1,7 @@
 package com.spring.todolist.mapper;
 
 import com.spring.todolist.domain.TodoDTO;
+import com.spring.todolist.domain.TodoSearchOption;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -12,4 +13,6 @@ public interface TodoMapper {
     int insert(TodoDTO todoDTO);
     int update(TodoDTO todoDTO);
     int delete(long tno);
+
+    List<TodoDTO> selectByTitle(TodoSearchOption todoSearchOption);
 }
