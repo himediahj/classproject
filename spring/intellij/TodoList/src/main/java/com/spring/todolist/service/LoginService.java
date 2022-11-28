@@ -3,8 +3,6 @@ package com.spring.todolist.service;
 
 import com.spring.todolist.domain.Member;
 import com.spring.todolist.mapper.MemberMapper;
-import com.spring.todolist.util.ConnectionProvider;
-import lombok.Cleanup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
