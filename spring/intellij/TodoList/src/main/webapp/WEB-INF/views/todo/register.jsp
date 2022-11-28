@@ -18,12 +18,12 @@
     <table>
         <tr>
             <td>할일</td>
-            <td><input type="text" name="title"></td>
+            <td><input type="text" name="title" value="${todo.title}"></td>
             <td><form:errors path="title"/></td>
         </tr>
         <tr>
             <td>기한</td>
-            <td><input type="date" name="dueDate"></td>
+            <td><input type="date" name="dueDate" value="${todo.dueDate}"></td>
             <td><form:errors path="dueDate"/></td>
         </tr>
         <tr>
