@@ -4,11 +4,13 @@ import com.todo.todospring.domain.TodoDTO;
 import com.todo.todospring.service.TodoService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
 
 @Controller
@@ -29,7 +31,7 @@ public class TodoInsertController {
 
     @PostMapping
     public String insert(   // @RequestParam("title") String title, @RequestParam("dueDate") String dueDate
-                            TodoDTO todoDTO ){
+                            @Valid TodoDTO todoDTO, BindingResult bindingResult){
 
         log.info(todoDTO.getTitle());
         log.info(todoDTO.getDueDate());
@@ -41,6 +43,11 @@ public class TodoInsertController {
                 .build();*/
 
         log.info("todoDTO => " + todoDTO);
+
+        if(bindingResult.hasErrors()){
+            log.info(bindingResult.getAllErrors());
+            return "todo/register";
+        }
 
         todoService.getTodoRegister(todoDTO);
 
