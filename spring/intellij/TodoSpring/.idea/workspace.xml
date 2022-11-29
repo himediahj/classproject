@@ -5,35 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27738817-d5d2-4111-a2d1-52fe2d5c44e5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcoding/mvc/springmvc/controller/DateConvertController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcoding/mvc/springmvc/domain/UserRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcoding/mvc/springmvc/exception/CommonExceptionAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcoding/mvc/springmvc/formatter/LocalDateFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/custom404.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/date.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/dateForm.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/formatter/CheckBoxFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/formatter/LocalDateFormatter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/rest/DeptJsonMessageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/rest/DeptRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/rest/ExampleRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/rest/SimpleConverterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/WEB-INF/views/mc/simple.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/index2.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../javaproject/DEPTManager/src/dept/dao/OracleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../javaproject/DEPTManager/src/dept/dao/OracleDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../javaproject/FirstJava/src/chapter05/exam/Contact.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../javaproject/MyProject/src/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../javaproject/MyProject/src/UserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcoding/mvc/springmvc/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcoding/mvc/springmvc/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcoding/mvc/springmvc/controller/SampleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcoding/mvc/springmvc/controller/SampleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/spring/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/spring/servlet-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/mypage/mypage1.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/mypage/mypage1.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/domain/DeptDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/domain/DeptDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TodoList/src/main/java/com/spring/todolist/exception/CommonExceptionAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TodoList/src/main/java/com/spring/todolist/exception/CommonExceptionAdvice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/todospring/controller/MemberRegController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/controller/MemberRegController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/todospring/controller/TodoInsertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/controller/TodoInsertController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/todospring/controller/TodoModifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/controller/TodoModifyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/todospring/dao/MemberDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/dao/MemberDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/todospring/dao/TodoDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/dao/TodoDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/todospring/dao/TodoDaoOld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/dao/TodoDaoOld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/todospring/domain/MemberRegRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/domain/MemberRegRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/todospring/domain/TodoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/domain/TodoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/todospring/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/todospring/service/MemberRegService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/service/MemberRegService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/todospring/service/TodoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/service/TodoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/todospring/service/TodoServiceOld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/root-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/root-context.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/servlet-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,13 +53,23 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="spring-beans.schema" />
         <option value="Interface" />
-        <option value="Jsp File" />
+        <option value="spring-beans.schema" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -80,7 +98,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/cheoho-hi/Documents/GitHub/classproject/spring/intellij/Todo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cheoho-hi/Documents/GitHub/classproject/spring/intellij/TodoSpring/src/main/resources/mappers&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -92,6 +110,7 @@
       <recent name="com.todo.todospring.dao" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cheoho-hi\Documents\GitHub\classproject\spring\intellij\TodoSpring\src\main\resources\mappers" />
       <recent name="C:\Users\cheoho-hi\Documents\GitHub\classproject\spring\intellij\TodoSpring\src\main\webapp\WEB-INF\views" />
       <recent name="C:\Users\cheoho-hi\Documents\GitHub\classproject\spring\intellij\TodoSpring\src\main\resources" />
     </key>
@@ -103,7 +122,122 @@
       <recent name="com.todo.todospring.domain" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.68">
+    <configuration name="ConnectionTest.deleteTodo" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ConnectionTest.deleteTodo&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ConnectionTest.insertTodo" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ConnectionTest.insertTodo&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ConnectionTest.selectAllTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ConnectionTest.selectAllTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ConnectionTest.selectByTnoTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ConnectionTest.selectByTnoTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ConnectionTest.updateTodo" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ConnectionTest.updateTodo&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="false">
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8 -Dconsole.encoding=UTF-8" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
@@ -193,6 +327,15 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.ConnectionTest.deleteTodo" />
+        <item itemvalue="Gradle.ConnectionTest.updateTodo" />
+        <item itemvalue="Gradle.ConnectionTest.insertTodo" />
+        <item itemvalue="Gradle.ConnectionTest.selectByTnoTest" />
+        <item itemvalue="Gradle.ConnectionTest.selectAllTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SpringBeansView">
@@ -210,7 +353,14 @@
       <workItem from="1669077509525" duration="21524000" />
       <workItem from="1669103437636" duration="2974000" />
       <workItem from="1669166071283" duration="5016000" />
-      <workItem from="1669184744982" duration="2015000" />
+      <workItem from="1669184744982" duration="2614000" />
+      <workItem from="1669191435131" duration="192000" />
+      <workItem from="1669278701115" duration="3788000" />
+      <workItem from="1669371564198" duration="30000" />
+      <workItem from="1669595921560" duration="11384000" />
+      <workItem from="1669617123465" duration="1482000" />
+      <workItem from="1669627028797" duration="696000" />
+      <workItem from="1669685788831" duration="1852000" />
     </task>
     <servers />
   </component>
