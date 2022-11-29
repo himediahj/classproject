@@ -1,32 +1,26 @@
 package com.todo.todospring.service;
 
-import com.todo.todospring.dao.TodoDao;
 import com.todo.todospring.domain.TodoDTO;
-import com.todo.todospring.util.ConnectionProvider;
-import lombok.Cleanup;
+import com.todo.todospring.mapper.TodoMapper;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 @Service
 @Log4j2
 public class TodoService {
+    @Autowired(required = false)
+    private TodoMapper todoMapper;
 
-    private final TodoDao dao;  //@autuwired 써도 됨
-
-    public TodoService(TodoDao dao) {
-        this.dao = dao;
-    }
 
     public List<TodoDTO> getTodoList() {
 
         log.info("TodoService getTodoList...");
         List<TodoDTO> list = null;
         try {
-            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
-             list = dao.selectAll(conn);
+             list = todoMapper.selectAll();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -39,8 +33,8 @@ public class TodoService {
         log.info("TodoService getTodoRead...");
         TodoDTO todo = null;
         try {
-            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
-            todo = dao.selectBy(conn, tno);
+
+            todo = todoMapper.selectByTno(tno);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -52,8 +46,8 @@ public class TodoService {
         log.info("TodoService getTodoRegister...");
         int result = 0;
         try {
-            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
-            result = dao.insert(conn, todo);
+
+            result = todoMapper.insertTodo(todo);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -65,8 +59,8 @@ public class TodoService {
         log.info("TodoService getTodoModify...");
         int result = 0;
         try {
-            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
-            result = dao.update(conn, todo);
+
+            result = todoMapper.updateTodo(todo);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -78,8 +72,8 @@ public class TodoService {
         log.info("TodoService getTodoRemove...");
         int result = 0;
         try {
-            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
-            result = dao.delete(conn, tno);
+
+            result = todoMapper.deleteTodo(tno);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
