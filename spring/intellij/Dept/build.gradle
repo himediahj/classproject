@@ -63,6 +63,8 @@ dependencies {
     // https://mvnrepository.com/artifact/org.hibernate/hibernate-validator
     implementation group: 'org.hibernate', name: 'hibernate-validator', version: '6.2.1.Final'
 
+    // 자바 객체와 JSON 사이의 변환 처리
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.0'
 }
 
 test {

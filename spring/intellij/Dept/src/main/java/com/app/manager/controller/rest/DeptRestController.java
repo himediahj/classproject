@@ -90,4 +90,5 @@ public class DeptRestController {
         deptDelService.delete(deptno);
         return new ResponseEntity<>("delete", HttpStatus.OK);
     }
+
 }

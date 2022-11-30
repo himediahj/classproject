@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@RestController // ResponseBody 따로 하지 않아도 됨
+@RestController // ResponseBody 따로 하지 않아도 됨 spring 4.0이상만 가능 그 이하는 ResponseBody 해줘야됨
 @RequestMapping("/test")
 @Log4j2
 public class ExampleRestController {

@@ -19,4 +19,5 @@ public class SimpleConverterController {
         return "body >>>>>>>> " + body; // ResponseBody 없으면 jsp 경로를 찾을텐데 body 안에 있는 입력데이터 name=song&age=20 값을 다 가져옴
         // json 형식의 문자열을 가져올 수 있음!
     }
+
 }

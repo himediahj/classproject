@@ -20,4 +20,5 @@ public class DeptJsonMessageController {
 
         return list;    // [{"deptno":10,"dname":"test10","loc":"loc10"},{"deptno":20,"dname":"test20","loc":"loc20"},{"deptno":30,"dname":"test30","loc":"loc30"}]
     }
+
 }

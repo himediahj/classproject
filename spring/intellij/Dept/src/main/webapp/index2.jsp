@@ -83,5 +83,12 @@
             console.log(res.body)
         })
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    axios.get('/api/v1/depts/10')
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+</script>
 </body>
 </html>
