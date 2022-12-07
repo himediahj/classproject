@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+
+  <style>
+    .title{
+      color: red;
+      font-weight: bold;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
 <span th:text="${list}"></span> <!--/* [aaa, bbb, ccc, ddd] */-->
@@ -89,5 +97,138 @@
     ${nullData}?:_ => <span th:text="${nullData}?:_">데이터가 없습니다.</span>  <!--/* 기본값인 '데이터 없다' 나옴 */-->
   </li>
 </ul>
+
+<hr>
+<h1>속성의 추가 / 변경</h1>
+<ul>
+  <li><span>안녕하세요</span></li> <!--/* 얘 빼고 다 style 적용되어서 나옴 */-->
+  <li><span th:class="${'title'}">안녕하세요</span></li> <!--/* <span class="title"> */-->
+  <li><span class="sub" th:class="${'title'}">안녕하세요</span></li> <!--/* <span class="title"> */-->
+  <li><span class="sub" th:attrappend="class=${' title'}">안녕하세요</span></li> <!--/* <span class="sub title"> */-->
+  <li><span class="sub" th:attrprepend="class=${' title '}">안녕하세요</span></li> <!--/* <span class="title sub"> */-->
+  <li><span class="sub" th:classappend="${'title'}">안녕하세요</span></li> <!--/* <span class="sub title"> */-->
+  <li> checked </li>
+  <li><input type="checkbox" name="aaa" th:checked="true"></li> <!--/* 논리값에 따라서 체크처리 됨 */-->
+  <li><input type="checkbox" name="aaa" th:checked="false"></li>
+  <li><input type="checkbox" name="aaa" th:checked="${10>1}"></li>
+</ul>
+
+<hr>
+<h1>조건식</h1>
+<div th:with="age=${15}">
+  <ul>
+    <li><span th:text="${age}"></span></li>
+    <li>  <!--/* 밑에서 미성년 하나 값만 나옴 */-->
+      <span th:text="성년" th:if="${age > 19}"></span>
+      <span th:text="미성년" th:unless="${age > 19}"></span> <!-- if else 개념이 없음 -->
+    </li>
+    <li th:switch="${age}">
+      <span th:case="15">15살</span>
+      <span th:case="20">20살</span>
+      <span th:case="25">25살</span>
+      <span th:case="*">기타</span> <!-- age를 30살이라고 정의하면 default값인 기타가 나옴 -->
+    </li>
+  </ul>
+  <!--분기 / 반복-->
+  <th:block th:if="${age > 19}">  <!-- 같은 조건이니까 묶자 -->
+    <div>성인입니다.</div>
+    <div>음주가 가능합니다.</div>
+    <div>술집에 출입이 가능합니다.</div>
+  </th:block>
+</div>
+
+<hr>
+<h1>반복문</h1>
+<h3>부서 리스트</h3>
+<table border="1">
+  <tr>
+    <th>부서번호</th>
+    <th>부서이름</th>
+    <th>부서위치</th>
+  </tr>
+  <tr th:each="dept : ${deptList}">
+    <td th:text="${dept.deptno}"></td>
+    <td>[[${dept.dname}]]</td>
+    <td th:text="${dept.loc}"></td>
+  </tr>
+</table>
+
+<table border="1">
+  <tr>
+    <th>index</th>
+    <th>count</th>
+    <th>부서번호</th>
+    <th>부서이름</th>
+    <th>부서위치</th>
+  </tr>
+  <tr th:each="dept, deptStat : ${deptList}">
+    <td th:text="${deptStat.index}"></td>
+    <td th:text="${deptStat.count}"></td>
+    <td th:text="${dept.deptno}"></td>
+    <td>[[${dept.dname}]]</td>
+    <td th:text="${dept.loc}"></td>
+  </tr>
+</table>
+
+<table border="1">
+  <tr>
+    <th>index</th>
+    <th>count</th>
+    <th>부서번호</th>
+    <th>부서이름</th>
+    <th>부서위치</th>
+  </tr>
+  <tr th:each="dept, deptStat : ${deptList}" th:object="${dept}">
+    <td th:text="${deptStat.index}"></td>
+    <td th:text="${deptStat.count}"></td>
+    <td th:text="*{deptno}"></td>
+    <td th:text="*{dname}"></td>
+    <td th:text="*{loc}"></td>
+  </tr>
+</table>
+
+<table border="1">
+  <tr>
+    <th>부서번호</th>
+    <th>부서이름</th>
+    <th>부서위치</th>
+  </tr>
+  <th:block th:each="dept : ${deptList}"> <!-- 블럭 안에 추가적으로 다른 내용 넣어야할 때 th:block 씀 -->
+  <tr>
+    <td th:text="${dept.deptno}"></td>
+    <td>[[${dept.dname}]]</td>
+    <td th:text="${dept.loc}"></td>
+  </tr>
+  </th:block>
+</table>
+
+<hr>
+<h1>모듈화 : insert</h1>
+<div th:insert="~{fragment/footer :: copy}"></div>  <!--/* <div><footer>footer</footer></div> */-->
+<div th:insert="fragment/footer :: copy"></div> <!--/* <div><footer>footer</footer></div> */-->
+
+<div th:replace="fragment/footer :: copy"></div>  <!--/* <footer> footer </footer> */-->
+
+<div th:replace="fragment/footer :: copyParam('전화번호 : 080-1111-1111', '이메일 : king@gmail.com')"></div>
+
+<script th:inline="javascript">
+  let deptno = [[${deptList[0].deptno}]]
+  let dname = [[${deptList[0].dname}]]
+  let loc = [[${deptList[0].loc}]];
+
+  // 객체 => JSON 변환되어 처리됨
+  let dept = '[[${dept}]]'
+  let deptList = '[[${deptList}]]'
+
+  let deptObj = JSON.parse(dept)
+  let deptListObj = JSON.parse(deptList)
+
+  console.log('deptno', deptno)
+  console.log('dname', dname)
+  console.log('loc', loc)
+
+  console.log('deptObj', deptObj)
+  console.log('deptListObj', deptListObj)
+</script>
 </body>
 </html>
