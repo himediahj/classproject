@@ -1,9 +1,9 @@
 package com.app.board.mapper;
 
 import com.app.board.domain.BoardDTO;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @Mapper
@@ -16,4 +16,17 @@ public interface BoardMapper {
 
     @Select("select count(*) from tbl_board")
     Integer totalCount();
+
+    @Insert("insert into tbl_board (title, content, writer, photo) values (#{title}, #{content}, #{writer}, #{photo})")
+    Integer insert(BoardDTO boardDTO) throws SQLException;
+
+    // 게시글 하나의 정보
+    @Select("select * from tbl_board where bno=#{bno}")
+    BoardDTO selectByBno(int bno);
+
+    @Delete("delete from tbl_board where bno=#{bno}") // 파라미터 하나라서 뭘 써도 상관x
+    Integer deleteByBno(int bno);
+
+    @Update("update tbl_board set title=#{title}, content=#{content}, writer=#{writer}, photo=#{photo}, updatedate=now() where bno=#{bno}")
+    Integer update(BoardDTO boardDTO) throws SQLException;
 }
