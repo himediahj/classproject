@@ -20,8 +20,8 @@ public class MapperTest {
         // List<BoardDTO> list1 = boardMapper.selectAll();
         // log.info("board List ::::::: "+ list1);
 
-        List<BoardDTO> list2 = boardMapper.selectList(0, 10);
-        log.info(list2);
+        // List<BoardDTO> list2 = boardMapper.selectList(0, 10);
+        // log.info(list2);
     }
 
 }
