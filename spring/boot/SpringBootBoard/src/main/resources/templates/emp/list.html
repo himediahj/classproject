@@ -26,10 +26,10 @@
         <th>커미션</th>
         <th>부서</th>
       </tr>
-      <tr th:each="emp : ${list}">
+      <tr th:each="emp : ${listPage.list}">
         <td th:text="${emp.empno}"></td>
         <td>
-        <a th:text="${emp.ename}" th:href="@{/emp/view(empno=${emp.empno})}"></a>
+        <a th:text="${emp.ename}" th:href="@{/emp/view(empno=${emp.empno}, p=${listPage.pageNum})}"></a>
         </td>
         <td th:text="${emp.job}"></td>
         <td th:text="${emp.mgr}"></td>
@@ -39,6 +39,30 @@
         <td th:text="${emp.deptno}"></td>
       </tr>
     </table>
+
+    <nav aria-label="...">
+      <ul class="pagination">
+
+        <th:block th:if="${listPage.prev}">
+        <li class="page-item">
+          <a class="page-link" th:href="@{/board/list(p=${listPage.startNum-1})}">&laquo;</a>
+        </li>
+        </th:block>
+
+        <th:block th:each="num : ${#numbers.sequence(listPage.startNum,listPage.endNum)}" th:with="active=${listPage.pageNum==num?'active':''}">
+        <li class="page-item" th:classappend="${active}">
+          <a class="page-link" th:href="@{/emp/list(p=${num})}" th:text="${num}"></a>
+        </li>
+        </th:block>
+
+        <th:block th:if="${listPage.next}">
+        <li class="page-item">
+          <a class="page-link" th:href="@{/board/list(p=${listPage.endNum+1})}">&raquo;</a>
+        </li>
+        </th:block>
+
+      </ul>
+    </nav>
   </div>
 </div>
 </body>

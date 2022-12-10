@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class EmpListController {
@@ -12,7 +13,7 @@ public class EmpListController {
     private EmpListService empListService;
 
     @GetMapping("/emp/list")
-    public void getList(Model model){
-        model.addAttribute("list", empListService.selectAll());
+    public void getList(Model model, @RequestParam(value = "p", defaultValue = "1") int pageNum){
+        model.addAttribute("listPage", empListService.getPage(pageNum));
     }
 }
