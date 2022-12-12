@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+    <script>
+
+        // window.onload = () => {}
+        // $() -> 팩토리 함수 : jquery 객체를 생성해주는 메소드
+        // document -> jquery 객체로 생성
+        /* $(document).ready(function(){
+            console.log('onload: jquery ready method')
+        })
+
+        $().ready(()=>{ // document 생략 가능 
+            alert('onload !!!')
+        }) */
+
+        /////////////////////////////////////////////////////////////
+
+        $().ready(()=>{
+            // 선택자를 이용한 문서객체 캐스팅
+            // document.querySelector('*') = $('*')
+            // $('*').css('color', 'red').css('background-color', '#eee')  // * 전체 선택 (html, head, body 다 style 적용됨)
+            // $('.bg-black').css('background-color', '#000')
+            // $('#pick').css('background-color', 'yellow')
+
+            
+            /////////////////////////////////////////////////////////
+            // document.querySelector('input[type=text]').value='안녕!!!'
+            // $('input[type=text]').val('안녕하세요123')
+
+            // let val1 = document.querySelector('input[type=text]').value
+            // let val2 = $('input:text').val()    // jquery 라이브러리 이용한 코드. 위랑 같음
+
+            // console.log('val1', val1)
+            // console.log('val2', val2)
+
+            
+            /////////////////////////////////////////////////////////
+            // 5초 후에 선택된 항목의 값을 확인
+            // setTimeout(()=>{
+            //     let selectVal = $('select > option:selected').val()
+            //     console.log('selectVal', selectVal)
+
+            //     let checkVal = $('input:checkbox:checked').val()
+            //     console.log('checkVal', checkVal)
+            // }, 5000)
+
+            
+            /////////////////////////////////////////////////////////
+            // $('table tr:odd').css('background-color', 'green')  // table > tbody > tr 홀수행만 초록색
+            // $('table tr:even').css('background-color', 'yellow')
+            // $('table tr:first').css('background-color', 'black').css('color', 'white')
+            // $('table tr:last').css('background-color', 'gray').css('color', 'blue')
+
+
+            /////////////////////////////////////////////////////////
+            // $('tr').first().css('color', 'blue')    // $('table tr:first')랑 같음
+            // $('tr').last().css('color', 'red')
+            // $('tr').eq(3).css('color', 'green') // index 3
+
+
+            /////////////////////////////////////////////////////////
+            // 배열 생성
+            // let links = [
+            //     {name: '네이버', URL: 'http://www.naver.com'}, {name: '다음', URL: 'htp://www.daum.net'}, {name: '카카오', URL: 'http://www.kakao.com'}
+            // ]
+
+            // let html = ''
+
+            // // 배열 처리
+            // $.each(links, (index, item) => {
+            //     console.log(index, item)    // 0 -> {name: '네이버', URL: 'http://www.naver.com'} 부터 2까지 나옴
+
+            //     html += '<a href="'+item.URL+'">'+item.name+'</a>\n'
+            // })
+
+            // console.log(html)
+
+            // // html() => innerHtml 속성 처리와 같다!
+            // // get
+            // let bodyVal = $('body').html()
+            // // console.log(bodyVal)
+
+            // // set
+            // $('#links').html(html)
+
+
+            /////////////////////////////////////////////////////////
+            // $('h1').each((index, item) => {
+            //     // $(item)
+            //     // innerHTML = get 확인
+            //     console.log(index, item.innerHTML)  // 0 'header - 0' 밑에랑 똑같음
+            //     // jquery get
+            //     console.log(index, $(item).html())
+
+            //     $(item).css('color', 'red')
+            // })
+
+
+            /////////////////////////////////////////////////////////
+            // $('h1').filter((index, item) => {   // filter boolean 값
+            //    return index%3 == 0 // return 값이 true인 것만 선택된다! index 0, 3 색만 바뀜
+            // }).css('color', 'blue')
+
+
+
+            /////////////////////////////////////////////////////////
+            let xml = '';
+            xml += '<links>';
+            xml += ' <link>';
+            xml += ' <name>네이버</name>';
+            xml += ' <url>http://www.naver.com</url>';
+            xml += ' </link>';
+            xml += ' <link>';
+            xml += ' <name>다음</name>';
+            xml += ' <url>http://www.daum.net</url>';
+            xml += ' </link>';
+            xml += ' <link>';
+            xml += ' <name>카카오</name>';
+            xml += ' <url>http://www.kakao.com</url>';
+            xml += ' </link>';
+            xml += '</links>';
+
+            // xml 형식을 가지는 문자열을 xml 문서객체로 변경
+            let xmlDoc = $.parseXML(xml)
+
+            let html = ''
+
+            // xmlDocument -> jQuery    : find(태그 이름) -> 태그 검색
+            $(xmlDoc).find('link').each((index, item) => {
+                
+                let name = $(item).find('name').text()
+                let url = $(item).find('url').text()
+
+                console.log(name, url)
+
+                html += '<div>'
+                html += ' <h2>'+name+'</h2>'
+                html += '  <p>'+url+'</p>'
+                html += '</div>'
+            })
+
+            $('body').html(html)
+        })
+        
+    </script>
+</head>
+<body>
+    <!-- <h2>header - 01</h2>
+    <h2 class="bg-black">header - 02</h2>
+    <h2 id="pick">header - 03</h2>
+    <h2>header - 04</h2>
+    <h2 class="bg-black">header - 05</h2> -->
+
+    
+
+    <!-- <input type="text"> -->
+
+
+
+    <!-- <select>
+        <option>2022</option>
+        <option>2021</option>
+        <option>2020</option>
+        <option>2019</option>
+    </select>
+    <input type="checkbox"> -->
+
+
+
+    <!-- <table border="1">
+        <tr>
+            <td>thead 1</td>
+            <td>thead 2</td>
+        </tr>
+        <tr>
+            <td>tbody 1 - 1</td>
+            <td>tbody 1 - 2</td>
+        </tr>
+        <tr>
+            <td>tbody 2 - 1</td>
+            <td>tbody 2 - 2</td>
+        </tr>
+        <tr>
+            <td>tbody 3 - 1</td>
+            <td>tbody 3 - 2</td>
+        </tr>
+        <tr>
+            <td>tbody 4 - 1</td>
+            <td>tbody 4 - 2</td>
+        </tr>
+        <tr>
+            <td>tbody 5 - 1</td>
+            <td>tbody 5 - 2</td>
+        </tr>
+        <tr>
+            <td>footer 1</td>
+            <td>footer 2</td>
+        </tr>
+    </table> -->
+
+
+
+    <!-- <div id="links"></div> -->
+
+
+
+    <!-- <h1>header - 0</h1>
+    <h1>header - 1</h1>
+    <h1>header - 2</h1>
+    <h1>header - 3</h1>
+    <h1>header - 4</h1> -->
+</body>
+</html>

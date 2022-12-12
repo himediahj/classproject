@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .title{
+            background-color: aqua;
+            color: blue;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+            // $('h2').addClass('title')
+
+            // setTimeout(()=>{
+            //     $('h2').removeClass('title')
+            // }, 3000)
+
+            //////////////////////////////////////////////////////////////////////////////////
+            // attr()
+            let widths = [100, 150, 200]
+            // getter
+            let srcPath = $('.img').attr('src')
+            console.log(srcPath)
+
+            // setter
+            // $('.img').attr('width', 200)
+
+            // setter2
+            // $('.img').attr('width', function(index){
+            //     // return (index+1) * 100  // 첫번째 사진은 100, 두번째 사진은 200
+            //     return widths[index]
+            // })
+
+            // setter3
+            // let option = {
+            //     width : 100,
+            //     height : function(index){
+            //         return widths[index]*2
+            //     }
+            // }
+            // $('.img').attr(option)
+
+            // setTimeout(()=>{
+            //     // 속성 제거
+            //     $('.img').removeAttr('height')
+            // }, 3000)
+
+            //////////////////////////////////////////////////////////////////////////////////
+            // css() : style 속성 컨트롤
+
+            // getter
+            // let colorVal = $('h1.title').css('color')
+            // console.log(colorVal);
+
+            // // setter1 -> 값
+            // $('h1').css('background', 'yellow')
+
+            // // setter2 -> fn
+            // let colors = ['black', 'orange', 'yellow']
+            // $('h1').css('background', (index)=>{
+            //     return colors[index]
+            // })
+
+            // // setter3 -> {}
+            // $('h1').css({
+            //     backgroundColor : (index) => {
+            //         return colors[index]
+            //     }, color : 'red'
+            // })
+
+            //////////////////////////////////////////////////////////////////////////////////
+            // html() -> innerHtml 속성과 같음 , text() -> textContent 속성과 같음
+            // getter
+            // console.log('html()', $('#menu1').html());  // <span>Text 1</span>
+            // console.log('text()', $('#menu2').text());  // Text 2
+
+            // setter 1 
+            // $('#menu1').html('<h1>div tag</h1>')
+            // $('#menu2').text('<h1>div tag</h1>')
+
+            // setter 2
+            // $('div').html((index, oldHtml) => {
+            //     console.log(index, oldHtml);    // 0, '\n        <span>Text 1</span>\n    ' 1, '\n        <span>Text 2</span>\n    '
+            //     return '<h1>'+oldHtml+'</h1>'   // <h1><span>Text 1</span></h1>
+            // })
+
+            // $('div').html(function(index, html){
+            //     console.log(index, html)
+            //     $(this).html('<h1>'+html+index+'!!!!</h1>') // this는 div 가리킴    <h1><span>Text 1</span> " 0!!!!"</h1>
+            // })
+
+            //////////////////////////////////////////////////////////////////////////////////
+            $('#btn1').click(function(e){
+                $('#menu1').remove()
+            })
+
+            $('#btn2').click(function(e){
+                $('#menu2').empty() // menu2 div 안을 비우는 것
+            })
+        })
+    </script>
+</head>
+<body>
+    <!-- <h2>header2</h2> -->
+
+    <!-- <img src="../html5/mini1.png" class="img">
+    <img src="../html5/mini2.jpg" class="img"> -->
+
+    <!-- <h1 class="title">header - 1</h1>
+    <h1 class="title">header - 2</h1>
+    <h1 class="title">header - 3</h1> -->
+
+    <div id="menu1">
+        <span>Text 1</span>
+    </div>
+    <div id="menu2">
+        <span>Text 2</span>
+    </div>
+
+    <button id="btn1">메뉴 삭제</button>
+    <button id="btn2">내용 삭제</button>
+</body>
+</html>
