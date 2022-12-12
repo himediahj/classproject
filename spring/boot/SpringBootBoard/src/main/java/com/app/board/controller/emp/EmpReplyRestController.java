@@ -21,7 +21,7 @@ public class EmpReplyRestController {
     private EmpReplyInsertService replyInsertService;
 
     @Autowired
-    private EmpReplyReadService replyReadService;
+    private EmpReplyReadService empReplyReadService;
 
     @Autowired
     private EmpReplyListService empReplyListService;
@@ -30,7 +30,7 @@ public class EmpReplyRestController {
     @PostMapping
     public ResponseEntity<ReplyDTO> insertReply(@RequestBody ReplyDTO replyDTO){
         replyInsertService.insertReply(replyDTO);
-        return new ResponseEntity<>(replyReadService.selectByRno(replyDTO.getRno()), HttpStatus.OK);
+        return new ResponseEntity<>(empReplyReadService.selectByRno(replyDTO.getRno()), HttpStatus.OK);
     }
 
     @GetMapping(value = "/{empno}", produces = MediaType.APPLICATION_JSON_VALUE)

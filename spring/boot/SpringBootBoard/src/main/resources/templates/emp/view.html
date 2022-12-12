@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     .checked {
-      color: orange;
+      color: rgba(250, 208, 0, 0.99);
     }
   </style>
 </head>
@@ -144,7 +144,9 @@
                   case 4 : html = '<td class="col-2">'+'<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>' +
                           '<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span>'+'&nbsp'+star+'</td>'
                         break
-                  case 5 : html = '<td class="col-2">'+'&#9733; &#9733; &#9733; &#9733; &#9733;'+'&nbsp'+star+'</td>'
+                  case 5 : html = '<td class="col-2">'+'<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>' +
+                          '<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>'
+                          +'&nbsp'+star+'</td>'
                         break
                 }
 
@@ -174,6 +176,53 @@
     }
     console.log("payload", payload)
 
+    axios.post('/emp/reply', payload)
+            .then(res => {
+              console.log('post -> response', res.data)
+
+              const reply = res.data
+
+              // replyList 영역에 새로운 tr 추가
+              const newTR = document.createElement('tr')
+              let html
+              let star = reply.star
+              switch (star){
+                case 1 : html = '<td class="col-2">'+'<span class="fa fa-star checked"></span>' +
+                        '<span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>'+'&nbsp'+star+'</td>'
+                  break
+                case 2 : html = '<td class="col-2">'+'<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>'+
+                        '<span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>'+'&nbsp'+star+'</td>'
+                  break
+                case 3 : html = '<td class="col-2">'+'<span class="fa fa-star checked"></span>' +
+                        '<span class="fa fa-star checked"></span>' +
+                        '<span class="fa fa-star checked"></span><span class="fa fa-star"></span>' +
+                        '<span class="fa fa-star"></span>'+'&nbsp'+star+'</td>'
+                  break
+                case 4 : html = '<td class="col-2">'+'<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>' +
+                        '<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span>'+'&nbsp'+star+'</td>'
+                  break
+                case 5 : html = '<td class="col-2">'+'<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>' +
+                        '<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>'
+                        +'&nbsp'+star+'</td>'
+                  break
+              }
+
+              html += '<td>'+reply.reply+'</td>'
+              html += '<td class="col-2">'+reply.replyer+'</td>'
+              html += '<td class="col-2">'+reply.replydate+'</td>'
+
+              newTR.innerHTML = html
+              newTR.setAttribute('class', 'fs-6 text-center')
+              newTR.setAttribute('tr-index', reply.rno)
+
+              replyList.appendChild(newTR)
+
+              var radio = document.querySelector('input[name="star"]:checked')
+              radio.checked = false
+              document.querySelector('#emp_reply').value=''
+              document.querySelector('#emp_replyer').value=''
+            })
+            .catch(err => console.log(err))
   }
 </script>
 </body>
