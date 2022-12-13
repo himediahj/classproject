@@ -130,6 +130,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
 <script th:inline="javascript">
   var bno = [[${boardView.bno}]]
 </script>
@@ -138,7 +140,7 @@
   let replyList
   let editModal
 
-  document.addEventListener('DOMContentLoaded', ()=>{
+  /*document.addEventListener('DOMContentLoaded', ()=>{
     // 댓글 리스트 출력 영역 캐스팅
     replyList = document.querySelector('#replyList')
 
@@ -156,7 +158,34 @@
 
     // 페이지가 로드되면 리스트 출력
     setList()
-  })
+  })*/
+
+  $().ready(function (){
+    editModal = new bootstrap.Modal('#replyEditModal')
+
+    $('#btn_reply').click(function(){insertReply()})
+    $('#btn_edit').click(function(){editReply()})
+
+    // 리스트 출력
+    $.ajax({
+      url: '/reply/'+bno,
+      success: function (data){
+        $.each(data, (index, item)=> {
+          console.log(index, item)
+
+            let html = '<td class="col-2">'+item.replyer+'</td>'
+            html += '<td>'+item.reply+'</td>'
+            html += '<td class="col-2">'+item.replydate+'</td>'
+            html += '<td class="col-2">'+
+                    '<a href="javascript:showEditModal('+item.rno+')" class="badge bg-warning text-decoration-none">수정</a> '
+                    +' <a href="javascript:deleteReply('+item.rno+')" class="badge bg-danger text-decoration-none">삭제</a></td>'
+
+          $('<tr></tr>').html(html).appendTo('#replyList').attr('class', 'fs-6 text-center').attr('tr-index', item.rno)
+
+          })
+        }
+      })
+    })
 
   function setList(){
     // 비동기 통신 : 댓글 리스트 가져오기
@@ -181,6 +210,7 @@
 
                 // 부모 태그에 요소 추가
                 replyList.appendChild(newTR)
+
               })
             })
             .catch(err => {
@@ -192,12 +222,34 @@
     // 서버로 전송할 payload (객체 형식)
     const payload = {
       bno : bno,  // 위에서 변수로 받아왔음
-      reply : document.querySelector('#reply').value,
-      replyer : document.querySelector('#replyer').value
+      reply : $('#reply').val(),
+      replyer : $('#replyer').val()
     }
-    console.log("payload", payload)
+    // console.log("payload", payload)
 
-    axios.post('/reply', payload)
+    $.ajax({
+      url: '/reply',
+      type: 'post',
+      data: JSON.stringify(payload),
+      dataType: "json",
+      contentType: "application/json",
+      success: function (data){
+
+        let html = '<td class="col-2">'+data.replyer+'</td>'
+        html += '<td>'+data.reply+'</td>'
+        html += '<td class="col-2">'+data.replydate+'</td>'
+        html += '<td class="col-2">'+
+                '<a href="javascript:showEditModal('+data.rno+')" class="badge bg-warning text-decoration-none">수정</a> '
+                +' <a href="javascript:deleteReply('+data.rno+')" class="badge bg-danger text-decoration-none">삭제</a></td>'
+
+        $('<tr></tr>').html(html).appendTo('#replyList').attr('class', 'fs-6 text-center').attr('tr-index', data.rno)
+
+        $('#reply').val('')
+        $('#replyer').val('')
+      }
+    })
+
+    /*axios.post('/reply', payload)
             .then(res => {
               console.log('post -> response', res.data)
 
@@ -213,8 +265,9 @@
                       +' <a href="javascript:deleteReply('+reply.rno+')" class="badge bg-danger text-decoration-none">삭제</a></td>'
 
               newTR.innerHTML = html
-              newTR.setAttribute('class', 'fs-6 text-center') /* font 작게 */
-              newTR.setAttribute('tr-index', reply.rno) /* 삭제하기 위한 속성 임의 부여 */
+              newTR.setAttribute('class', 'fs-6 text-center') /!* font 작게 *!/
+              newTR.setAttribute('tr-index', reply.rno) /!* 삭제하기 위한 속성 임의 부여 *!/
+
 
               // 부모 태그에 요소 추가
               replyList.appendChild(newTR)
@@ -222,7 +275,8 @@
               document.querySelector('#reply').value = ''
               document.querySelector('#replyer').value = ''
 
-            }).catch(err => console.log(err))
+
+            }).catch(err => console.log(err))*/
   }
 
   function deleteReply(rno) {
@@ -230,9 +284,9 @@
     if (!confirm('삭제하시겠습니까?')) {
       return
     }
-
       console.log('rno >>> ', rno)
-      axios.delete('/reply/' + rno)
+
+      /*axios.delete('/reply/' + rno)
               .then(res => {
                 console.log('delete - response => ', res.data)
 
@@ -245,21 +299,46 @@
                   alert('삭제할 대상이 존재하지 않습니다.')
                 }
               })
-              .catch(err => console.log(err))
+              .catch(err => console.log(err))*/
+
+    $.ajax({
+      url: '/reply/'+rno,
+      type: 'delete',
+      success: function (data){
+        console.log('delete - response =>', data)
+
+        if(data == 1){
+          // 화면에서 해당 tr-index == rno행 삭제
+          $('tr[tr-index="'+rno+'"]').remove()
+          alert('삭제되었습니다.')
+        } else {
+          alert('삭제할 대상이 존재하지 않습니다.')
+        }
+      }
+    })
     }
 
   function showEditModal(rno){
     editModal.show()
 
-    const editTD = document.querySelectorAll('tr[tr-index="'+rno+'"]>td')
+    /*const editTD = document.querySelectorAll('tr[tr-index="'+rno+'"]>td')
     console.log(editTD[0].textContent)
     console.log(editTD[1].textContent)
-    console.log(editTD[2].textContent)
+    console.log(editTD[2].textContent)*/
 
-    document.querySelector('#erno').value = rno
+    let editTD = $('tr[tr-index="'+rno+'"]>td')
+
+    $('#erno').val(rno)
+    $('#ereplyer').val(editTD[0].textContent)
+    $('#ereply').val(editTD[1].textContent)
+    $('#ereplydate').val(editTD[2].textContent)
+
+    /*document.querySelector('#erno').value = rno
     document.querySelector('#ereplyer').value = editTD[0].textContent
     document.querySelector('#ereply').value = editTD[1].textContent
-    document.querySelector('#ereplydate').value = editTD[2].textContent
+    document.querySelector('#ereplydate').value = editTD[2].textContent*/
+
+
   }
 
   function editReply(){
@@ -267,15 +346,28 @@
     // put => 전체 데이터의 변경, 모든 데이터를 서버로 전송, 값이 없는 경우 기본값 저장
     const payload = {
       bno : bno,  // 위에서 변수로 받아왔음
-      rno : document.querySelector('#erno').value,
-      reply : document.querySelector('#ereply').value,
-      replyer : document.querySelector('#ereplyer').value,
-      replydate : document.querySelector('#ereplydate').value
+      rno : $('#erno').val(),
+      reply : $('#ereply').val(),
+      replyer : $('#ereplyer').val(),
+      replydate : $('#ereplydate').val()
     }
 
-    console.log(payload)
+    // console.log(payload)
 
-    axios.put('/reply/' + payload.rno, payload)
+    $.ajax({
+      url: '/reply/'+payload.rno,
+      type: 'put',
+      data: JSON.stringify(payload),
+      dataType: "json",
+      contentType: "application/json",
+      success: function (){
+        $('tr[tr-index="'+payload.rno+'"]>td')[1].textContent = payload.reply
+        editModal.hide()
+      }
+
+    })
+
+    /*axios.put('/reply/' + payload.rno, payload)
             .then(res => {
               console.log('put -> response', res.data)  // res.data = 1 나옴
 
@@ -284,7 +376,7 @@
 
               editModal.hide()
             })
-            .catch()
+            .catch()*/
   }
 
 </script>
