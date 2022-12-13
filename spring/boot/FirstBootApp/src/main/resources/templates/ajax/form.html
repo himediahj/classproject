@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(function (){
+      // $.ajax('/data.html', {
+      //   success : function (data){
+      //     console.log(data) // html 데이터
+      //     $('body').append(data)
+      //   }
+      // })
+
+
+      // $.ajax({  // 위랑 똑같음
+      //   url : '/data.html',
+      //   success : function (data){
+      //     console.log(data)
+      //     $('body').append(data)
+      //   }
+      // })
+
+
+      // $.get('/data.html', function (data){  // 두번째꺼랑 비교했을 때 이게 더 간단하네
+      //   $('body').html(data)
+      // })
+
+
+      // $('body').load('/data.html')  // 위랑 결과 같음
+
+
+      // /parameter get 방식  name, price 전송
+      // $('#btnSubmit').click(function (){
+      //   let name = $('#name').val()
+      //   let price = $('#price').val()
+      //
+      //   $.ajax({
+      //     url : '/parameter',
+      //     type : 'get', // post put delete 가능
+      //     data : {name:name, price:price},  // {} 또는 문자열 (쿼리 스트링) ex) name=milk&price=1000
+      //     success : function (data){
+      //       console.log('통신 결과', data)
+      //       $('body').append('<h3>'+data+'</h3>')
+      //     }
+      //   })
+      // })
+
+
+      // $.get('/parameter', {name:'우유', price:1000}, function (data){
+      //   $('body').html(data)
+      // })
+
+
+      // $.get('/data.json', function (data){
+      //   console.log(data) // 배열 형식의 객체
+      //
+      //   $.each(data, function (index, item){
+      //     $('body').append('<h2>'+item.name+':'+ item.price +'</h2>')
+      //   })
+      // }, 'json')
+
+
+      /*$.getJSON('/data.json', function (data){  // 위에랑 결과 같음
+        console.log(data)
+        $.each(data, function (index, item){
+          $('body').append('<h2>'+item.name+':'+ item.price +'</h2>')
+        })
+      })*/
+
+
+      /*$.ajax({
+        url: '/data.xml',
+        success: function (data){
+          $(data).find('product').each(function (){
+            let name = $(this).find('name').text()
+            let price = $(this).find('price').text()
+
+            $('div').append('<h3>'+name+' : '+price+'</h3>')
+          })
+        }
+      })*/
+
+
+      $('#myForm').submit(function (){
+        // serialize array 둘 쓰려면 form 태그 필요하다 문자열 형식만 가능! 파일 X
+        let param1 = $(this).serialize()  // this는 submit 가리킴 serialize => 폼 안의 name으로 쿼리 스트링 만들어줌
+        let param2 = $(this).serializeArray() // 배열 객체 형식으로 처리
+
+        console.log('param1', param1) // name=%EC%BB%A4%ED%94%BC&price=5000
+        console.log('param2', param2) // [{name: 'name', value: '커피'}, {name: 'price, value: '5000'}]
+
+        $.get('/parameter', param2, function (data){
+          $('body').html(data)
+        })
+
+        return false
+      })
+
+    })
+  </script>
+</head>
+<body>
+<!--  이름 <input type="text" name="name" id="name">
+  가격 <input type="text" name="price" id="price">
+  <input type="submit" id="btnSubmit" value="전송">-->
+
+
+<!--<div></div>-->
+
+
+<form id="myForm">
+  이름 <input type="text" name="name" id="name">
+  가격 <input type="text" name="price" id="price">
+  <input type="submit" id="btnSubmit" value="전송">
+</form>
+</body>
+</html>

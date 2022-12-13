@@ -94,16 +94,16 @@
 
             // $('div').html(function(index, html){
             //     console.log(index, html)
-            //     $(this).html('<h1>'+html+index+'!!!!</h1>') // this는 div 가리킴    <h1><span>Text 1</span> " 0!!!!"</h1>
+            //     $(this).html('<h1>'+html+index+'!!!!</h1>') // this는 div 가리킴 화살표함수에서는 못쓰고 function에서 씀    <h1><span>Text 1</span> " 0!!!!"</h1>
             // })
 
             //////////////////////////////////////////////////////////////////////////////////
             $('#btn1').click(function(e){
-                $('#menu1').remove()
+                $('#menu1').remove()    // menu1 div 자체가 날라감
             })
 
             $('#btn2').click(function(e){
-                $('#menu2').empty() // menu2 div 안을 비우는 것
+                $('#menu2').empty() // menu2 div 안을 비우는 것 <div id="menu2"></div>
             })
         })
     </script>

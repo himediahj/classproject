@@ -21,39 +21,61 @@
 
     <script>
         $().ready(function(){
-            $('div').click(function(){
-                console.log('div click!');
-            })
+            // $('div').click(function(){
+            //     console.log('div click!');
+            // })
 
-            $('p').click(function(){
-                console.log('p click!')
-                return false    // div 쪽으로 이벤트 올라가지 않게끔
-            })
+            // $('p').click(function(){
+            //     console.log('p click!')
+            //     return false    // div 쪽으로 이벤트 올라가지 않게끔
+            // })
 
-            $('a').click(function(e){
+            // $('a').click(function(e){
                 
-                e = e || window.event   // 이벤트 객체가 false 일 때 window.event 처리
+            //     e = e || window.event   // 이벤트 객체가 false 일 때 window.event 처리
 
-                // 기본 이벤트 제거
-                // e.preventDefault()  // 네이버로 가지 못하도록
+            //     // 기본 이벤트 제거
+            //     // e.preventDefault()  // 네이버로 가지 못하도록
 
-                // 이벤트 버블링 제거
-                // if(e.stopPropagation){
-                //     e.stopPropagation() // 누른 것만 console 찍힌다
-                //}
+            //     // 이벤트 버블링 제거
+            //     // if(e.stopPropagation){
+            //     //     e.stopPropagation() // 누른 것만 console 찍힌다
+            //     //}
 
-                console.log('a click!') // link만 눌러도 p, div console 찍힘
+            //     console.log('a click!') // link만 눌러도 p, div console 찍힘
 
-                return false    // 기본 이벤트 제거, 버블링 제거 효과             
+            //     return false    // 기본 이벤트 제거, 버블링 제거 효과             
+            // })
+
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////
+            $('#allCheck').change(function(){
+                console.log('checked 상태', this.checked)   // true, false 
+
+                if(this.checked){   // true 라면
+                    $('#checkItem').children().prop('checked', true)
+                } else {
+                    $('#checkItem').children().prop('checked', false)
+                }
             })
         })
     </script>
 </head>
 <body>
-    <div>
+    <!-- <div>
         <p>
             <a href="http://www.naver.com">link</a>
         </p>
+    </div> -->
+
+
+    <input type="checkbox" id="allCheck">
+    <label for="allCheck">all 전체 동의</label>
+
+    <div id="checkItem">
+        <input type="checkbox"><label>a Type</label>
+        <input type="checkbox"><label>b Type</label>
+        <input type="checkbox"><label>c Type</label>
     </div>
 </body>
 </html>
