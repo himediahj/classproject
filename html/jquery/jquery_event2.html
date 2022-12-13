@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div, p, a {
+            border: 1px solid #000;
+            padding: 10px;
+        }
+
+        p {
+            width: 50%;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+    <script>
+        $().ready(function(){
+            $('div').click(function(){
+                console.log('div click!');
+            })
+
+            $('p').click(function(){
+                console.log('p click!')
+                return false    // div 쪽으로 이벤트 올라가지 않게끔
+            })
+
+            $('a').click(function(e){
+                
+                e = e || window.event   // 이벤트 객체가 false 일 때 window.event 처리
+
+                // 기본 이벤트 제거
+                // e.preventDefault()  // 네이버로 가지 못하도록
+
+                // 이벤트 버블링 제거
+                // if(e.stopPropagation){
+                //     e.stopPropagation() // 누른 것만 console 찍힌다
+                //}
+
+                console.log('a click!') // link만 눌러도 p, div console 찍힘
+
+                return false    // 기본 이벤트 제거, 버블링 제거 효과             
+            })
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <p>
+            <a href="http://www.naver.com">link</a>
+        </p>
+    </div>
+</body>
+</html>
