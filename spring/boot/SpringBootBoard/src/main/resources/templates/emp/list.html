@@ -16,16 +16,18 @@
   </div>
   <div class="card-body">
     <table class="table text-center">
-      <tr>
-        <th>사번</th>
-        <th>이름</th>
-        <th>담당 업무</th>
-        <th>담당 매니저</th>
-        <th>입사일</th>
-        <th>연봉</th>
-        <th>커미션</th>
-        <th>부서</th>
-      </tr>
+      <thead class="bg-primary text-white">
+        <tr>
+          <th>사번</th>
+          <th>이름</th>
+          <th>담당 업무</th>
+          <th>담당 매니저</th>
+          <th>입사일</th>
+          <th>연봉</th>
+          <th>커미션</th>
+          <th>부서</th>
+        </tr>
+      </thead>
       <tr th:each="emp : ${listPage.list}">
         <td th:text="${emp.empno}"></td>
         <td>
@@ -65,5 +67,6 @@
     </nav>
   </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>

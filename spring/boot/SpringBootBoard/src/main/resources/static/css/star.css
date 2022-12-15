@@ -1,28 +1,28 @@
-#review fieldset{
+div.review fieldset{
     display: inline-block;
-    direction: rtl;
+    direction: rtl; /* Right-To-Left 별 선택 방향 바로잡기 */
     border: 0;
 }
 
-#review input[type=radio]{
-    display: none;
+div.review input[type=radio]{
+    display: none;  /*라디오 박스 감춤*/
 }
 
-#review label{
+div.review label{
     font-size: 2em;
     color: transparent;
     text-shadow: 0 0 0 #f0f0f0;
 }
 
-#review label:hover{
+div.review label:hover{
     text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
 }
 
 /* ~ = 특정 태그 다음에 오는 모든 형제들 */
-#review label:hover ~ label{
+div.review label:hover ~ label{
     text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
 }
 
-#review input[type=radio]:checked ~ label{
+div.review input[type=radio]:checked ~ label{
     text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
 }
