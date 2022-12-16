@@ -1,6 +1,7 @@
 package com.app.board.controller.emp;
 
 import com.app.board.domain.emp.ReplyDTO;
+import com.app.board.service.emp.EmpReplyDeleteService;
 import com.app.board.service.emp.EmpReplyListService;
 import com.app.board.service.emp.EmpReplyInsertService;
 import com.app.board.service.emp.EmpReplyReadService;
@@ -26,6 +27,9 @@ public class EmpReplyRestController {
     @Autowired
     private EmpReplyListService empReplyListService;
 
+    @Autowired
+    private EmpReplyDeleteService empReplyDeleteService;
+
 
     @PostMapping
     public ResponseEntity<ReplyDTO> insertReply(@RequestBody ReplyDTO replyDTO){
@@ -37,5 +41,10 @@ public class EmpReplyRestController {
     public ResponseEntity<List<ReplyDTO>> selectList(@PathVariable("empno") int empno){
         List<ReplyDTO> list = empReplyListService.selectAll(empno);
         return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{rno}")
+    public ResponseEntity<Integer> deleteReply(@PathVariable int rno){
+        return new ResponseEntity<>(empReplyDeleteService.delete(rno), HttpStatus.OK);
     }
 }

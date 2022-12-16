@@ -1,8 +1,9 @@
 package com.app.board;
 
+import com.app.board.domain.BoardEditRequest;
+import com.app.board.domain.BoardWriteRequest;
 import com.app.board.entity.Board;
-import com.app.board.entity.BoardRepository;
-import com.app.board.entity.ReplyRepository;
+import com.app.board.repository.BoardRepository;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 
 import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.Optional;
+
 
 @SpringBootTest
 @Log4j2
@@ -22,54 +23,65 @@ public class BoardRepositoryTest {
     @Autowired
     private BoardRepository boardRepository;
 
-    @Autowired
-    private ReplyRepository replyRepository;
+    @Test
+    public void saveTest(){
+        BoardWriteRequest writeRequest = BoardWriteRequest.builder()
+                .title("12월 16일 JPA 테스트 작성")
+                .writer("JPA")
+                .content("테스트 실행!")
+                .build();
+
+        Board board = writeRequest.toBoardEntity();
+
+        log.info("insert 전 >>> " + board);  // bno = null
+
+        log.info("insert 후 >>> " + boardRepository.save(board));
+    }
 
     @Test
-    public void jpaMethodTest(){
-        /*Optional<Board> board = boardRepository.findById(116);
-        Board boardData = board.orElse(null);
+    public void findIdTest(){
+        // view 페이지, edit form
+        Optional<Board> result = boardRepository.findById(129);
+        Board board = result.get();
 
-        log.info(board);*/
+        log.info(board);
+    }
 
-
-        // insert
-        /*Board insertData = Board.builder()
-                .title("jpa test")
-                .content("jpa test")
-                .writer("guest")
+    @Test
+    public void editTest(){
+        BoardEditRequest editRequest = BoardEditRequest.builder()
+                .bno(129)
+                .title("12월 16일 변경")
+                .content("내용 수정")
                 .build();
 
-        Board resultData = boardRepository.save(insertData);
+        Board board = editRequest.toBoardEntity();
+        board.setUpdatedate(LocalDate.now());
 
-        log.info(resultData);*/
+        log.info("수정 전 데이터 >>> " + board);
 
-
-        // 수정
-        Board editData = Board.builder()
-                .bno(121)
-                .title("jpa update test")
-                .content("jpa update test")
-                .writer("guest")
-                .build();
-        Board editResult = boardRepository.save(editData);
-        log.info(editResult);
+        log.info("수정 후 데이터 >>> " + boardRepository.save(board));
 
     }
 
     @Test
-    public void boardWithCntTest(){
-        Page<Object[]> result = boardRepository.listWithCnt(PageRequest.of(0, 10, Sort.by("bno").descending()));
+    public void deleteTest(){
+       int result = boardRepository.deleteByBno(121);
+       log.info(">>>> 결과 >>>> " + result);
+    }
 
-        log.info("result >>> 조회항목 리스트 " + result.getContent());     // [[], [], []]
-        log.info("result >>> 전체 게시물의 개수 " + result.getTotalElements());
-        log.info("result >>> 전체 페이지의 개수 " + result.getTotalPages());
-        log.info("result >>> 현재 요청 페이지 " + result.getNumber()); // 0부터 시작!
-        log.info("result >>> 페이지 당 표현할 항목의 개수 " + result.getSize());
-        log.info("result >>> 현재 페이지에 출력된 항목의 개수 " + result.getNumberOfElements());
+    @Test
+    public void listTest(){
+        // 페이징 -> 구간 select
+        Page<Board> page = boardRepository.findAll(PageRequest.of(0, 10, Sort.by("bno").descending()));
 
-        for(Object[] arr : result.getContent()){
-            log.info(Arrays.toString(arr));
+        // 전체 게시물 개수
+        long totalCount = page.getTotalElements();
+        log.info(totalCount);
+
+        // 게시물 리스트
+        for (Board board : page.getContent()){
+            log.info(board);
         }
     }
 }

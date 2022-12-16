@@ -29,7 +29,7 @@
         <td th:text="${board.bno}"></td>
         <td>
           <a th:text="${board.title}" th:href="@{/board/view(bno=${board.bno}, p=${listPage.pageNum})}"></a>
-          <span th:text="${board.replycnt}" class="badge bg-danger"></span>
+<!--          <span th:text="${board.replycnt}" class="badge bg-danger"></span>-->
         </td>
         <td th:text="${board.writer}"></td>
         <td th:text="${board.regdate}"></td>

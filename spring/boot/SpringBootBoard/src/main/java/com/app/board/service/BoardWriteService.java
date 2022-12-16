@@ -2,6 +2,8 @@ package com.app.board.service;
 
 import com.app.board.domain.BoardDTO;
 import com.app.board.domain.BoardWriteRequest;
+import com.app.board.entity.Board;
+import com.app.board.repository.BoardRepository;
 import com.app.board.mapper.BoardMapper;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,9 @@ import java.util.UUID;
 public class BoardWriteService {
     @Autowired
     private BoardMapper boardMapper;
+
+    @Autowired
+    private BoardRepository boardRepository;
 
     public int write(BoardWriteRequest boardWriteRequest){
 
@@ -58,18 +63,21 @@ public class BoardWriteService {
             }
         }
 
-        BoardDTO boardDTO = boardWriteRequest.toBoardDTO();
+        // BoardDTO boardDTO = boardWriteRequest.toBoardDTO();
+        // request -> entity로 변경
+        Board board = boardWriteRequest.toBoardEntity();
 
         if(newFileName != null){
-            boardDTO.setPhoto(newFileName);
+            board.setPhoto(newFileName);
         }
 
         int result = 0;
 
         try {
             // DB insert
-            result = boardMapper.insert(boardDTO);
-        } catch(SQLException e){
+            // result = boardMapper.insert(boardDTO);
+            result = boardRepository.save(board) != null ? 1 : 0;
+        } catch(Exception e){
             // 저장 됐는데 오류가 났으면 삭제해줘야함
             if(newFileName != null){
                 File delFile = new File(saveDir, newFileName);

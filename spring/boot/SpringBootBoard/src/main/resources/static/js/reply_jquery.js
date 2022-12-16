@@ -43,7 +43,7 @@ function insertReply(){
         reply : $('#reply').val(),
         replyer : $('#replyer').val()
     }
-    // console.log("payload", payload)
+    console.log("payload", payload)
 
     $.ajax({
         url: '/reply',

@@ -2,6 +2,8 @@ package com.app.board.service;
 
 import com.app.board.domain.BoardDTO;
 import com.app.board.domain.BoardEditRequest;
+import com.app.board.entity.Board;
+import com.app.board.repository.BoardRepository;
 import com.app.board.mapper.BoardMapper;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,9 @@ public class BoardEditService {
 
     @Autowired
     private BoardMapper boardMapper;
+
+    @Autowired
+    private BoardRepository boardRepository;
 
     public int edit(BoardEditRequest boardEditRequest){
         MultipartFile file = boardEditRequest.getFormFile();
@@ -61,17 +66,22 @@ public class BoardEditService {
         }
 
 
-        BoardDTO boardDTO = boardEditRequest.toBoardDTO();
+        // BoardDTO boardDTO = boardEditRequest.toBoardDTO();
+        // Request -> Entity 변경
+        Board board = boardEditRequest.toBoardEntity();
         if(newFileName != null){
-            boardDTO.setPhoto(newFileName);
+            board.setPhoto(newFileName);
+        } else {
+            board.setPhoto(null);
         }
 
-        log.info(boardDTO);
+        log.info(board);
         int result = 0;
 
         try {
             // db update
-            result = boardMapper.update(boardDTO);
+            // result = boardMapper.update(boardDTO);
+            boardRepository.save(board);
 
             // 새로운 파일이 저장되고 이전 파일 존재한다면 삭제
             String oldFileName = boardEditRequest.getOldFile();
@@ -82,7 +92,7 @@ public class BoardEditService {
                     log.info(" >>> " + oldFileName + " 파일 삭제");
                 }
             }
-        } catch (SQLException e) {  // mapper에서 오류발생하면
+        } catch (Exception e) {  // mapper에서 오류발생하면
             log.info("SQLException ...");
             // 새롭게 저장된 파일 삭제
             if(newFileName != null){

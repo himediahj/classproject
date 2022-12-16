@@ -35,4 +35,7 @@ public interface EmpMapper {
 
     @Select("select * from emp_reply where empno=#{empno}")
     List<ReplyDTO> selectAll(int empno);
+
+    @Delete("delete from emp_reply where rno=#{rno}")
+    int deleteReply(int rno);
 }
