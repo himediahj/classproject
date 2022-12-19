@@ -25,10 +25,20 @@
             Account
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">로그인</a></li>
-            <li><a class="dropdown-item" href="#">회원가입</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">로그아웃</a></li>
+            <!--<li sec:authorize="isAuthenticated()">
+              <span sec:authentication="principal.boardMember"></span> &lt;!&ndash; customuser 안의 member &ndash;&gt;
+            </li>-->
+            <li sec:authorize="isAuthenticated()">
+              <span sec:authentication="principal.boardMember.username"></span>
+            </li>
+            <li sec:authorize="isAuthenticated()">
+              <span sec:authentication="principal.boardMember.userid"></span>
+            </li>
+            <li sec:authorize="!isAuthenticated()"><a class="dropdown-item" href="/auth/login">로그인</a></li> <!-- 로그인 상태 아닐 때 -->
+            <li sec:authorize="!isAuthenticated()"><a class="dropdown-item" href="#">회원가입</a></li>
+
+            <li sec:authorize="isAuthenticated()"><hr class="dropdown-divider"></li>
+            <li sec:authorize="isAuthenticated()"><a class="dropdown-item" href="/auth/logout">로그아웃</a></li>
           </ul>
         </li>
         <!--        <li class="nav-item">

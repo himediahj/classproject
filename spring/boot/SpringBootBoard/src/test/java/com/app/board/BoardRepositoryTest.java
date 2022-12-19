@@ -23,11 +23,11 @@ public class BoardRepositoryTest {
     @Autowired
     private BoardRepository boardRepository;
 
-    @Test
+    /*@Test
     public void saveTest(){
         BoardWriteRequest writeRequest = BoardWriteRequest.builder()
                 .title("12월 16일 JPA 테스트 작성")
-                .writer("JPA")
+                .writer("cool")
                 .content("테스트 실행!")
                 .build();
 
@@ -36,7 +36,7 @@ public class BoardRepositoryTest {
         log.info("insert 전 >>> " + board);  // bno = null
 
         log.info("insert 후 >>> " + boardRepository.save(board));
-    }
+    }*/
 
     @Test
     public void findIdTest(){

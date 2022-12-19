@@ -1,5 +1,6 @@
 package com.app.board.domain;
 
+import com.app.board.entity.BoardMember;
 import com.app.board.entity.Reply;
 import lombok.*;
 
@@ -15,7 +16,8 @@ public class ReplyDTO {
     private int rno;
     private int bno;
     private String reply;
-    private String replyer;
+//    private String replyer;
+    private Integer replyer;
     private String replydate;
     private String updatedate;
 
@@ -24,7 +26,8 @@ public class ReplyDTO {
                 .rno(rno)
                 .bno(bno)
                 .reply(reply)
-                .replyer(replyer)
+//                .replyer(replyer)
+                .replyer(BoardMember.builder().idx(replyer).build())
                 .build();
     }
 }

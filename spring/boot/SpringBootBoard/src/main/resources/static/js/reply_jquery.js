@@ -22,12 +22,12 @@ function setList() {
         console.log(data)
 
         $.each(data, function (index, reply) { // foreach는 index가 뒤로 감
-            let html = '<td class="col-2">' + reply.replyer + '</td>'
+            let html = '<td class="col-2">' + reply.replyer.username + '</td>'
             html += '<td>' + reply.reply + '</td>'
             html += '<td class="col-2">' + reply.replydate + '</td>'
             html += '<td class="col-2">' +
-                '<a href="javascript:" class="badge bg-warning text-decoration-none edit">수정</a> '
-                + ' <a href="javascript:" class="badge bg-danger text-decoration-none del">삭제</a></td>'
+                '<a href="javascript:" replyer-idx="'+reply.replyer.idx+'" class="badge bg-warning text-decoration-none edit">수정</a> '
+                + ' <a href="javascript:" replyer-idx="'+reply.replyer.idx+'" class="badge bg-danger text-decoration-none del">삭제</a></td>'
 
             const newTR = $('<tr></tr>').attr('class', 'fs-6 text-center').attr('tr-index', reply.rno).html(html)
 
@@ -55,12 +55,12 @@ function insertReply(){
 
             const reply = data
 
-            let html = '<td class="col-2">'+reply.replyer+'</td>'
+            let html = '<td class="col-2">'+reply.replyer.username+'</td>'
             html += '<td>'+reply.reply+'</td>'
             html += '<td class="col-2">'+reply.replydate+'</td>'
             html += '<td class="col-2">'+
-                '<a href="javascript:" class="badge bg-warning text-decoration-none edit">수정</a> '
-                +' <a href="javascript:" class="badge bg-danger text-decoration-none del">삭제</a></td>'
+                '<a href="javascript:" replyer-idx="'+reply.replyer.idx+'" class="badge bg-warning text-decoration-none edit">수정</a> '
+                +' <a href="javascript:" replyer-idx="'+reply.replyer.idx+'" class="badge bg-danger text-decoration-none del">삭제</a></td>'
 
             const newTR = $('<tr></tr>').attr('class', 'fs-6 text-center').attr('tr-index', reply.rno).html(html)
 
@@ -76,6 +76,11 @@ function insertReply(){
 function deleteReply(e){
     // a 기본 기능 제거
     e.preventDefault()
+
+    if(midx != $(this).attr('replyer-idx')){
+        alert('작성자만 수정 또는 삭제가 가능합니다.')
+        return false;
+    }
 
     if(!confirm('삭제하시겠습니까?')){
         return
@@ -111,6 +116,11 @@ function showEditModal(e){
     // a 기본 기능 제거
     e.preventDefault()
 
+    if(midx != $(this).attr('replyer-idx')){
+        alert('작성자만 수정 또는 삭제가 가능합니다.')
+        return false;
+    }
+
     editModal.show()
 
     //const editTD = document.querySelectorAll('tr[tr-index="'+rno+'"]>td')
@@ -118,7 +128,8 @@ function showEditModal(e){
     const rno = $(this).parent('td').parent('tr').attr('tr-index')
 
     $('#erno').val(rno)
-    $('#ereplyer').val($(editTD).eq(0).text())
+    $('#ereplyerName').val($(editTD).eq(0).text())
+    $('#ereplyer').val($(this).attr('replyer-idx'))
     $('#ereply').val($(editTD).eq(1).text())
     $('#ereplydate').val($(editTD).eq(2).text())
 }

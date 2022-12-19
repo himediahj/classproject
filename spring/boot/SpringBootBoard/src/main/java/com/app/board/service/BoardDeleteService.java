@@ -4,6 +4,7 @@ import com.app.board.domain.BoardDTO;
 import com.app.board.entity.Board;
 import com.app.board.repository.BoardRepository;
 import com.app.board.mapper.BoardMapper;
+import com.app.board.repository.ReplyRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,12 +20,18 @@ public class BoardDeleteService {
     @Autowired
     private BoardRepository boardRepository;
 
+    @Autowired
+    private ReplyRepository replyRepository;
+
 
     public int delete(int bno){
 
         // 삭제하려는 게시물의 데이터
         // BoardDTO boardDTO = boardMapper.selectByBno(bno);
         Board board = boardRepository.findById(bno).get();
+
+        // 먼저 모든 댓글을 삭제
+        replyRepository.deleteByBno(bno);
 
         // 삭제 결과
         // int result = boardMapper.deleteByBno(bno);

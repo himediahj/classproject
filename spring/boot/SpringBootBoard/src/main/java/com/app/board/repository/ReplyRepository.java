@@ -22,5 +22,15 @@ public interface ReplyRepository extends JpaRepository<Reply, Integer> {
     @Query("select r from Reply r where r.bno = :bno order by r.rno")
     List<Reply> findByBno(@Param("bno") Integer bno);
 
+    // 게시글 삭제 시 모든 댓글 삭제되어야 게시글 삭제 가능
+    // 해당 게시물의 모든 댓글 삭제하는 메소드
+    @Transactional
+    @Modifying
+    @Query("delete from Reply r where r.bno = ?1")
+    int deleteByBno(Integer bno);
+
+
+
+
 
 }
