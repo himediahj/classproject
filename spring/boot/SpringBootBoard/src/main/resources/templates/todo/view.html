@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<body>
+<!-- nav 영역 시작 -->
+<div th:replace="fragment/nav"></div>
+
+<div class="card m-3">
+  <div class="card-header">
+    Todos
+  </div>
+  <div class="card-body">
+    <div class="p-3 border-bottom">
+      <h5 class="title my-2">Todo 등록</h5>
+      <div class="mb-3">
+        <label class="form-label">할일</label>
+        <input type="hidden" id="todo_wirter" th:value="${#authentication.principal.boardMember.idx}">
+        <input type="text" class="form-control" id="todo" name="todo">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">기한</label>
+        <input type="date" class="form-control" id="duedate" name="dueDate">
+      </div>
+      <div class="mb-3">
+        <input type="submit" value="등록" id="todo_btn" class="form-control btn btn-primary">
+      </div>
+    </div>
+
+    <table class="table">
+      <tbody id="todoList">
+
+      </tbody>
+    </table>
+
+    <div style="text-align: right" id="activeBtn">
+      <button type="button" class="btn btn-primary position-relative" id="active">
+        진행중
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="count"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="todoEditModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Todo 수정</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label class="form-label">할일</label>
+          <input type="text" class="form-control" id="editTodo">
+          <input type="hidden" id="editTno">
+          <input type="hidden" id="editTodoWirter" th:value="${#authentication.principal.boardMember.idx}">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">기한</label>
+          <input type="date" class="form-control" id="editDate">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">완료 여부</label>&nbsp;
+          <input style="zoom:1.8" type="checkbox" id="editFin">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="todoEditBtn" class="btn btn-primary">수정</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+<script>
+  let editTodoModal
+
+  $().ready(function (){
+    editTodoModal = new bootstrap.Modal('#todoEditModal')
+
+    $('#todo_btn').on('click', insertTodo)
+
+    $('#todoList').on('click', '.edit', showTodoEditModal)
+    $('#todoList').on('click', '.del', deleteTodo)
+
+    $('#todoEditBtn').click(editTodo)
+
+    setTodoList()
+
+    $('#active').click(showActive)
+  })
+
+  function insertTodo(){
+    const payload = {
+      todo : $('#todo').val(),
+      writer : $('#todo_wirter').val(),
+      dueDate : $('#duedate').val()
+    }
+
+    console.log("payload", payload)
+
+    $.ajax({
+      url: '/rest',
+      type: 'post',
+      data: JSON.stringify(payload),
+      dataType: 'json',
+      contentType: 'application/json',
+      success: function (data){
+        const todo = data
+
+        let html = '<td>'+todo.todo+'</td>'
+        html += '<td class="col-2">'+todo.dueDate+'</td>'
+        html += '<td class="col-2">진행중</td>'
+        html += '<td class="col-2"><a class="text-decoration-none edit">수정 </a> <a class="text-decoration-none del"> 삭제</a></td>'
+
+        const newTR = $('<tr></tr>').attr('tr-index', todo.tno).html(html)
+
+        $('#todoList').append(newTR)
+
+        $('#todo').val('')
+        $('#duedate').val('')
+      }
+    })
+  }
+
+  function deleteTodo(e){
+    e.preventDefault()
+
+    if(!confirm('삭제하시겠습니까?')){
+      return
+    }
+
+    const tno = $(this).parent('td').parent('tr').attr('tr-index')
+
+    $.ajax({
+      url: '/rest/'+tno,
+      type: 'delete',
+      success: function (data){
+        if(data==1){
+          $('tr[tr-index="'+tno+'"]').remove()
+          alert('삭제되었습니다.')
+        } else {
+          alert('삭제할 대상이 없습니다.')
+        }
+      }, error: function (request, httpStatus, error){
+        console.log(request)
+        console.log(httpStatus)
+        console.log(error)
+      }
+    })
+  }
+
+  function showTodoEditModal(e){
+    e.preventDefault()
+
+    editTodoModal.show()
+
+    const editTd = $(this).parent('td').parent('tr').children('td')
+    const tno = $(this).parent('td').parent('tr').attr('tr-index')
+
+    $('#editTno').val(tno)
+    $('#editTodo').val(editTd.eq(0).text())
+    $('#editTodoWirter').val()
+    $('#editDate').val(editTd.eq(1).text())
+    if(editTd.eq(2).text()=='완료'){
+      $('#editFin').attr('checked', true)
+    } else {$('#editFin').attr('checked', false)}
+  }
+
+  function editTodo(){
+    const payload = {
+      tno: $('#editTno').val(),
+      todo: $('#editTodo').val(),
+      writer: $('#editTodoWirter').val(),
+      dueDate: $('#editDate').val(),
+      finished: $('#editFin').is(":checked")
+    }
+
+    console.log(payload)
+
+    $.ajax({
+      url: '/rest/'+payload.tno,
+      type: 'put',
+      data: JSON.stringify(payload),
+      dataType: 'json',
+      contentType: 'application/json',
+      success: function (){
+        const editTd = $('tr[tr-index="'+payload.tno+'"]>td')
+        $(editTd).eq(0).text(payload.todo)
+        $(editTd).eq(1).text(payload.dueDate)
+        $(editTd).eq(2).text(payload.finished=='true'?'완료':'진행중')
+        editTodoModal.hide()
+        window.location.reload()
+      }
+    })
+  }
+
+  function setTodoList(){
+    $.getJSON('/rest', function (data){
+      console.log(data)
+
+      var result = data.filter(item=>item['finished'] == false)
+      console.log('count', result.length)
+      $('#count').text(+result.length+'+')
+
+      $.each(data, (index, todos)=>{
+        makeHtml(todos)
+      })
+    })
+  }
+
+  function makeHtml(todos){
+    let html = '<td>'+todos.todo+'</td>'
+    html += '<td class="col-2">'+todos.dueDate+'<span id="remain-date"></span></td>'
+    let finished = todos.finished?'완료':'진행중'
+    html += '<td class="col-2">'+finished+'</td>'
+    html += '<td class="col-2"><a class="text-decoration-none edit"> 수정</a><a class="text-decoration-none del"> 삭제</a></td>'
+
+    const newTr = $('<tr></tr>').attr('class', 'text-center').attr('tr-index', todos.tno).html(html)
+    $('#todoList').append(newTr)
+  }
+
+  function showActive(){
+    $.getJSON('/rest/active', function (data){
+      console.log(data)
+
+      $('#todoList').empty()
+
+      $.each(data, function (index, active){
+        makeHtml(active)
+      })
+    })
+  }
+</script>
+</body>
+</html>

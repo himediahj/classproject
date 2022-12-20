@@ -23,7 +23,7 @@ public class CustomSecurityConfig {
         // 나머지 요청 경로 : 모두 허가
         http.authorizeHttpRequests()
                 .antMatchers("/board/**", "/reply/**", "/todo/**").hasRole("USER")
-                .antMatchers("/admin/**", "/emp/**").hasRole("ADMIN")
+                .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().permitAll();
 
         // 로그인 페이지에 대한 설정, 성공시 처리 핸들러 등록
