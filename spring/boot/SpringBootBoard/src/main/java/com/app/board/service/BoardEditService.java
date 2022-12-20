@@ -66,15 +66,15 @@ public class BoardEditService {
             }
         }
 
-
+        String oldFileName = boardEditRequest.getOldFile();
         // BoardDTO boardDTO = boardEditRequest.toBoardDTO();
         // Request -> Entity 변경
         Board board = boardEditRequest.toBoardEntity();
         if(newFileName != null){
             board.setPhoto(newFileName);
-        } else {
+        } else if(oldFileName.length() == 0) board.setPhoto(null);/* else {
             board.setPhoto(null);
-        }
+        }*/
 
         log.info(board);
         int result = 0;
@@ -87,7 +87,7 @@ public class BoardEditService {
             boardRepository.save(board);
 
             // 새로운 파일이 저장되고 이전 파일 존재한다면 삭제
-            String oldFileName = boardEditRequest.getOldFile();
+            oldFileName = boardEditRequest.getOldFile();
             if(newFileName != null && oldFileName != null && !oldFileName.isEmpty()){
                 File delOldFile = new File(saveDir, oldFileName);
                 if(delOldFile.exists()){
