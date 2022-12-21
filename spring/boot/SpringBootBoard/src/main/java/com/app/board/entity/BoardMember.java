@@ -31,10 +31,10 @@ public class BoardMember {
     @Column
     private String role;
 
-    @Column
+    @Column(insertable = false)
     private LocalDateTime regdate;
 
-    @Column
+    @Column(insertable = false)
     private LocalDateTime editdate;
 
 
