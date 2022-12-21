@@ -12,9 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/rest")
@@ -33,12 +38,19 @@ public class TodoRestController {
     private TodoListService todoListService;
 
     @PostMapping
-    public ResponseEntity<Todo> insertTodo(@RequestBody TodoDTO todoDTO){
+    public ResponseEntity<Todo> insertTodo(
+            @Valid
+            @RequestBody TodoDTO todoDTO, Errors errors){
         log.info("insert 전 : " + todoDTO);
+        if(errors.hasErrors()){
+            log.info(errors.getFieldErrors());
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         Todo todoresult = todoInsertService.insertTodo(todoDTO);
         log.info("insert 후 : " + todoresult);
         return new ResponseEntity<>(todoresult, HttpStatus.OK);
     }
+
 
     @DeleteMapping("/{tno}")
     public ResponseEntity<Integer> delete(@PathVariable("tno") int tno){

@@ -20,6 +20,7 @@
         <label class="form-label">할일</label>
         <input type="hidden" id="todo_wirter" th:value="${#authentication.principal.boardMember.idx}">
         <input type="text" class="form-control" id="todo" name="todo">
+
       </div>
       <div class="mb-3">
         <label class="form-label">기한</label>
@@ -56,6 +57,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+
+        <form id="editForm">
+
         <div class="mb-3">
           <label class="form-label">할일</label>
           <input type="text" class="form-control" id="editTodo">
@@ -70,6 +74,8 @@
           <label class="form-label">완료 여부</label>&nbsp;
           <input style="zoom:1.8" type="checkbox" id="editFin">
         </div>
+        </form>
+
       </div>
       <div class="modal-footer">
         <button type="button" id="todoEditBtn" class="btn btn-primary">수정</button>
@@ -114,19 +120,12 @@
       dataType: 'json',
       contentType: 'application/json',
       success: function (data){
-        const todo = data
-
-        let html = '<td>'+todo.todo+'</td>'
-        html += '<td class="col-2">'+todo.dueDate+'</td>'
-        html += '<td class="col-2">진행중</td>'
-        html += '<td class="col-2"><a class="text-decoration-none edit">수정 </a> <a class="text-decoration-none del"> 삭제</a></td>'
-
-        const newTR = $('<tr></tr>').attr('tr-index', todo.tno).html(html)
-
-        $('#todoList').append(newTR)
+        makeHtml(data)
 
         $('#todo').val('')
         $('#duedate').val('')
+      }, error: function (){
+        alert('할일은 공백이 불가하며 기한은 이전날짜일 수 없습니다!')
       }
     })
   }
@@ -160,17 +159,21 @@
 
   function showTodoEditModal(e){
     e.preventDefault()
-
     editTodoModal.show()
+
+    $('#editForm')[0].reset()
 
     const editTd = $(this).parent('td').parent('tr').children('td')
     const tno = $(this).parent('td').parent('tr').attr('tr-index')
 
     $('#editTno').val(tno)
-    $('#editTodo').val(editTd.eq(0).text())
+    $('#editTodo').val(editTd.eq(1).text())
     $('#editTodoWirter').val()
-    $('#editDate').val(editTd.eq(1).text())
-    if(editTd.eq(2).text()=='완료'){
+    $('#editDate').val(editTd.eq(2).text())
+
+    console.log(editTd.eq(0).text())
+
+    if(editTd.eq(0).text()=='Completed'){
       $('#editFin').attr('checked', true)
     } else {$('#editFin').attr('checked', false)}
   }
@@ -194,9 +197,9 @@
       contentType: 'application/json',
       success: function (){
         const editTd = $('tr[tr-index="'+payload.tno+'"]>td')
-        $(editTd).eq(0).text(payload.todo)
-        $(editTd).eq(1).text(payload.dueDate)
-        $(editTd).eq(2).text(payload.finished=='true'?'완료':'진행중')
+        $(editTd).eq(0).text(payload.finished)
+        $(editTd).eq(1).text(payload.todo)
+        $(editTd).eq(2).text(payload.dueDate)
         editTodoModal.hide()
         window.location.reload()
       }
@@ -218,10 +221,18 @@
   }
 
   function makeHtml(todos){
-    let html = '<td>'+todos.todo+'</td>'
-    html += '<td class="col-2">'+todos.dueDate+'<span id="remain-date"></span></td>'
-    let finished = todos.finished?'완료':'진행중'
-    html += '<td class="col-2">'+finished+'</td>'
+    const deadLine = new Date(todos.dueDate)
+    const today = new Date()
+    const diff = deadLine - today
+    const diffDay = Math.floor(diff / (1000*60*60*24))
+    let html = ''
+    if(!todos.finished){
+      html += '<td class="col-1"><span class="badge text-bg-danger">D-'+diffDay+'</span></td>'
+    } else html += '<td class="col-1"><span class="badge rounded-pill text-bg-secondary">Completed</span></td>'
+    html += '<td>'+todos.todo+'</td>'
+    html += '<td class="col-2">'+todos.dueDate+'</td>'
+    /*let finished = todos.finished?'완료':'진행중'
+    html += '<td class="col-2">'+finished+'</td>'*/
     html += '<td class="col-2"><a class="text-decoration-none edit"> 수정</a><a class="text-decoration-none del"> 삭제</a></td>'
 
     const newTr = $('<tr></tr>').attr('class', 'text-center').attr('tr-index', todos.tno).html(html)

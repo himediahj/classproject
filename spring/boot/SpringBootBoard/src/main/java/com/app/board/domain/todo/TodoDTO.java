@@ -4,6 +4,8 @@ import com.app.board.entity.BoardMember;
 import com.app.board.entity.Todo;
 import lombok.*;
 
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 
 @AllArgsConstructor
@@ -14,8 +16,10 @@ import java.time.LocalDate;
 @Builder
 public class TodoDTO {
     private int tno;
+    @NotBlank
     private String todo;
     private Integer writer;
+    @Future
     private LocalDate dueDate;
     private boolean finished;
 
