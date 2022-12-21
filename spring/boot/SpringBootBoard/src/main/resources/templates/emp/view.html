@@ -127,7 +127,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">수정</button>
+        <button type="button" id="empReplyEditBtn" class="btn btn-primary">수정</button>
       </div>
     </div>
   </div>
@@ -150,10 +150,12 @@
 
     // 댓글 작성 버튼
     const emp_reply_btn = document.querySelector('#emp_reply_btn')
+    const empReplyEdit = document.querySelector('#empReplyEditBtn')
 
     editModal = new bootstrap.Modal('#empReplyEditModal')
 
     emp_reply_btn.addEventListener('click', insertEmpReply)
+    empReplyEdit.addEventListener('click', editEmpReply)
 
     // 페이지가 로드되면 리스트 출력
     setEmpList()
@@ -234,22 +236,22 @@
               let star = reply.star
               switch (star){
                 case 1 : html = '<td class="col-2">'+'<span class="fa fa-star checked"></span>' +
-                        '<span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>'+star+'</td>'
+                        '<span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>'+'&nbsp;'+star+'</td>'
                   break
                 case 2 : html = '<td class="col-2">'+'<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>'+
-                        '<span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>'+star+'</td>'
+                        '<span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>'+'&nbsp;'+star+'</td>'
                   break
                 case 3 : html = '<td class="col-2">'+'<span class="fa fa-star checked"></span>' +
                         '<span class="fa fa-star checked"></span>' +
                         '<span class="fa fa-star checked"></span><span class="fa fa-star"></span>' +
-                        '<span class="fa fa-star"></span>'+star+'</td>'
+                        '<span class="fa fa-star"></span>'+'&nbsp;'+star+'</td>'
                   break
                 case 4 : html = '<td class="col-2">'+'<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>' +
-                        '<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span>'+star+'</td>'
+                        '<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span>'+'&nbsp;'+star+'</td>'
                   break
                 case 5 : html = '<td class="col-2">'+'<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>' +
                         '<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>'
-                        +star+'</td>'
+                        +'&nbsp;'+star+'</td>'
                   break
               }
 
@@ -313,6 +315,33 @@
     document.querySelector('#emp_replyer_edit').value = editTD[2].textContent
     document.querySelector('#emp_reply_date').value = editTD[3].textContent
 
+  }
+
+  function editEmpReply(){
+    const payload = {
+      empno: empno,
+      rno: document.querySelector('#emp_reply_rno').value,
+      star: document.querySelector('#star-rating input[name="rating"]:checked').value,
+      reply: document.querySelector('#emp_reply_edit').value,
+      replyer: document.querySelector('#emp_replyer_edit').value,
+      replydate: document.querySelector('#emp_reply_date').value
+    }
+
+    console.log(payload)
+
+    axios.put('/emp/reply/'+payload.rno, payload)
+            .then(res => {
+              console.log('put -> response', res.data)
+
+              const editTd = document.querySelectorAll('tr[tr-index="'+payload.rno+'"]>td')
+
+              editTd[0].textContent = payload.star
+              editTd[1].textContent = payload.reply
+
+              editModal.hide()
+              window.location.reload()
+            })
+            .catch()
   }
 </script>
 </body>

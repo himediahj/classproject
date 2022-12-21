@@ -1,10 +1,7 @@
 package com.app.board.controller.emp;
 
 import com.app.board.domain.emp.ReplyDTO;
-import com.app.board.service.emp.EmpReplyDeleteService;
-import com.app.board.service.emp.EmpReplyListService;
-import com.app.board.service.emp.EmpReplyInsertService;
-import com.app.board.service.emp.EmpReplyReadService;
+import com.app.board.service.emp.*;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,6 +27,9 @@ public class EmpReplyRestController {
     @Autowired
     private EmpReplyDeleteService empReplyDeleteService;
 
+    @Autowired
+    private EmpReplyEditService empReplyEditService;
+
 
     @PostMapping
     public ResponseEntity<ReplyDTO> insertReply(@RequestBody ReplyDTO replyDTO){
@@ -46,5 +46,11 @@ public class EmpReplyRestController {
     @DeleteMapping("/{rno}")
     public ResponseEntity<Integer> deleteReply(@PathVariable int rno){
         return new ResponseEntity<>(empReplyDeleteService.delete(rno), HttpStatus.OK);
+    }
+
+    @PutMapping("/{rno}")
+    public ResponseEntity<Integer> editReply(@PathVariable int rno, @RequestBody ReplyDTO replyDTO){
+        replyDTO.setRno(rno);
+        return new ResponseEntity<>(empReplyEditService.update(replyDTO), HttpStatus.OK);
     }
 }

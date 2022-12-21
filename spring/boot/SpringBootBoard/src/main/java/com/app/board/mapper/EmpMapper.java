@@ -38,4 +38,7 @@ public interface EmpMapper {
 
     @Delete("delete from emp_reply where rno=#{rno}")
     int deleteReply(int rno);
+
+    @Update("update emp_reply set star=#{star}, reply=#{reply} where rno=#{rno}")
+    int updateReply(ReplyDTO replyDTO);
 }
