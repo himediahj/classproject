@@ -1,7 +1,7 @@
 package com.app.board.controller.auth;
 
 import com.app.board.domain.MemberDTO;
-import com.app.board.service.MemberSaveService;
+import com.app.board.service.auth.MemberSaveService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

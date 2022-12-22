@@ -1,4 +1,4 @@
-package com.app.board.service;
+package com.app.board.service.auth;
 
 import com.app.board.domain.MemberDTO;
 import com.app.board.entity.BoardMember;
@@ -22,5 +22,10 @@ public class MemberSaveService {
         member.setRole("USER");
         result = memberJoinRepository.save(member) != null ? 1 : 0;
         return result;
+    }
+
+    public long idCheck(String userid){
+        long cnt = memberJoinRepository.countByUserid(userid);
+        return cnt;
     }
 }
