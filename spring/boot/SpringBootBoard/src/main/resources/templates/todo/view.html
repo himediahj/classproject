@@ -31,6 +31,11 @@
       </div>
     </div>
 
+    <form action="/todo/search" method="get" class="p-2">
+      <button class="btn btn-outline-success" id="search-btn" type="submit" style="float: right">Search</button>
+      <input class="form-control" type="text" placeholder="할일 검색" aria-label="Search" name="keyword" style="width: 150px; float: right">
+    </form>
+
     <table class="table">
       <tbody id="todoList">
 
@@ -102,6 +107,7 @@
     setTodoList()
 
     $('#active').click(showActive)
+    //$('#search-btn').click(showSearchList)
   })
 
   function insertTodo(){
@@ -250,6 +256,9 @@
       })
     })
   }
+
+
+
 </script>
 </body>
 </html>

@@ -20,6 +20,16 @@ public interface BoardTodoRepository extends JpaRepository<Todo, Integer> {
     @Query("select t from Todo t where t.writer.idx = ?1 and t.finished = false order by t.dueDate")
     List<Todo> findByWriter_IdxAndFinishedFalseOrderByDueDateAsc(Integer idx);
 
+    @Query("""
+            select t from Todo t
+            where upper(t.todo) like upper(concat('%', ?1, '%')) and t.writer.idx = ?2
+            order by t.dueDate""")
+    List<Todo> findByTodoContainsIgnoreCaseAndWriter_IdxOrderByDueDateAsc(String todo, Integer idx);
+
+
+
+
+
 
 
 
