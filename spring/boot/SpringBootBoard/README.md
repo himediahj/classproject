@@ -41,6 +41,10 @@
  ### (2) 상세보기
  ![EMP상세보기](https://user-images.githubusercontent.com/113006963/209285276-2eb5ea50-341c-4196-9d1d-81368a248216.JPG)
  - 이름을 클릭하면 정보를 볼 수 있고, 별점과 댓글을 남길 수 있는 페이지입니다.
+ ### (3) 댓글 수정, 삭제
+ ![merge_from_ofoct (3)](https://user-images.githubusercontent.com/113006963/209286027-a92cb6b9-d5dc-4fa9-844d-3b197ee8bc86.jpg)
+ - 모달창을 띄워 값을 가져오고, 값을 변경하여 수정이 반영되도록 합니다.
+ - confirm창을 띄워 삭제 여부를 묻고 삭제합니다.
  </details>
  <details>
  <summary>Todo 메뉴</summary>
