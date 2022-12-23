@@ -28,5 +28,17 @@
  - SecurityFilterChain을 통하여 권한에 따른 접속을 제한합니다.<br>
  - User 권한을 가진 사용자들은 Board와 Todo 메뉴에 접근이 가능합니다. 따라서 해당 메뉴 접속 시 로그인은 필수입니다.<br>
 </details>
+<details>
+ <summary>Board 메뉴</summary>
+ 
+ </details>
+ <details>
+ <summary>Emp 메뉴</summary>
+ 
+ </details>
+ <details>
+ <summary>Todo 메뉴</summary>
+ 
+ </details>
 
 
