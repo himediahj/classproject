@@ -44,6 +44,7 @@
  - 내가 쓴 todo 리스트만 보게 하기 위해 Repository에서 작성자 컬럼을 조건으로 하는 쿼리를 생성해서 ajax를 통해 리스트를 불러옵니다.
  - 미완료 된 todo는 D-day가 보이게 하고, 하단에 진행중인 todo만 볼 수 있는 버튼을 따로 생성합니다.
  ### (2) Todo 수정
+ ![todo수정](https://user-images.githubusercontent.com/113006963/209282145-69926671-8300-44f4-8c00-a60d18403b69.JPG)
  - 모달창을 띄워 값을 가져오고, 값을 변경하여 수정이 반영되도록 합니다.
  </details>
  <details>
