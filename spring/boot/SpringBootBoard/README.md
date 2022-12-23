@@ -51,6 +51,8 @@
 ![사본 -검색결과](https://user-images.githubusercontent.com/113006963/209283536-ba746820-45d4-458c-9877-871a843f0444.jpg)
  - 'es'만 검색했을 때 'es'를 포함하는 Todo 검색 결과를 출력합니다.
  ### (4) Todo 삭제
+ ![삭제완료](https://user-images.githubusercontent.com/113006963/209283887-2f3bc4ee-d3bd-470a-8588-c362db78f20f.JPG)
+ - confirm창을 띄워 삭제 여부를 묻고 삭제합니다.
  </details>
  <details>
  <summary>Account 메뉴</summary>
