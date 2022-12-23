@@ -40,7 +40,9 @@
  <summary>Todo 메뉴</summary>
  
  ### (1) Todo 페이지
- 
+ ![todo](https://user-images.githubusercontent.com/113006963/209280242-ec1635d7-d176-489e-a27b-08e8880c9a5d.JPG)
+ - 내가 쓴 todo 리스트만 보게 하기 위해 Repository에서 작성자 컬럼을 조건으로 하는 쿼리를 생성해서 ajax를 통해 리스트를 불러옵니다.
+ - 미완료 된 todo는 D-day가 보이게 하고, 하단에 진행중인 todo만 볼 수 있는 버튼을 따로 생성합니다.
  </details>
  <details>
  <summary>Account 메뉴</summary>
