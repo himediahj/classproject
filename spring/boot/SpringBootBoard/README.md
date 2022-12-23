@@ -31,10 +31,11 @@
 <details>
  <summary>Board 메뉴</summary>
  
- ### (1) 글 쓰기
  ![merge_from_ofoct (4)](https://user-images.githubusercontent.com/113006963/209288409-489472d7-6ff3-4f17-a19a-2ed21d688af5.jpg)
  - 로그인한 회원 이름이 작성자에 표시되며, 사진과 함께 글을 등록할 수 있습니다.
  - 다른 회원에게는 수정, 삭제 버튼이 보이지 않습니다.
+ - 게시글 수정, 삭제 기능이 있습니다.
+ - 댓글 등록, 수정, 삭제가 가능합니다.
  </details>
  <details>
  <summary>Emp 메뉴</summary>
