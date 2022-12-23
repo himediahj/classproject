@@ -38,6 +38,9 @@
  ### (1) Emp 리스트
  ![emp](https://user-images.githubusercontent.com/113006963/209284372-7ea202ca-f05c-42fc-8f59-fa04a210d6e8.JPG)
  - https://www.lesstif.com/dbms/oracle-mysql-emp-dept-table-schema-test-data-18219073.html 테스트 용도로 EMP 테이블과 DEPT 테이블을 생성해서 두 테이블을 조인시켜 리스트를 출력합니다.
+ ### (2) 상세보기
+ ![EMP상세보기](https://user-images.githubusercontent.com/113006963/209285276-2eb5ea50-341c-4196-9d1d-81368a248216.JPG)
+ - 이름을 클릭하면 정보를 볼 수 있고, 별점과 댓글을 남길 수 있는 페이지입니다.
  </details>
  <details>
  <summary>Todo 메뉴</summary>
