@@ -3,6 +3,8 @@ package com.app.board.domain;
 import com.app.board.entity.BoardMember;
 import lombok.*;
 
+import javax.validation.constraints.NotBlank;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -12,6 +14,7 @@ import lombok.*;
 public class MemberDTO {
 
     private Integer idx;
+    @NotBlank
     private String userid;
     private String password;
     private String username;
