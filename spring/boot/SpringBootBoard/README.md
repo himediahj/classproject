@@ -43,5 +43,7 @@
  <details>
  <summary>Account 메뉴</summary>
  
+ ![merge_from_ofoct (1)](https://user-images.githubusercontent.com/113006963/209279395-4d28abd1-95b5-4130-8445-1272ce756791.jpg)
+ - 비로그인 상태에서는 로그인, 회원가입이 보이고, 로그인 상태에서는 ID와 user이름, 로그아웃이 보입니다.
  </details>
 
