@@ -18,9 +18,15 @@
         <div class="p-3 border-bottom">
             <h5 class="title my-2">Todo 검색 결과</h5>
             <table class="table">
-                <tr th:each="list:${searchlist}">
+                <tr th:each="list:${searchlist}" th:attr="tr-index=${list.tno}" th:class="text-center">
+                    <th:block th:if="${list.finished}">
+                        <td class="col-1"><span class="badge rounded-pill text-bg-secondary">Completed</span></td>
+                    </th:block>
+                    <th:block th:unless="${list.finished}">
+                        <td class="col-1"><span class="badge text-bg-danger">진행중</span></td>
+                    </th:block>
                     <td th:text="${list.todo}"></td>
-                    <td th:text="${list.dueDate}"></td>
+                    <td th:text="${list.dueDate}" th:class="col-2"></td>
                 </tr>
             </table>
         </div>
