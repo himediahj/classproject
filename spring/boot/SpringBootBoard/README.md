@@ -35,6 +35,9 @@
  <details>
  <summary>Emp 메뉴</summary>
  
+ ### (1) Emp 리스트
+ ![emp](https://user-images.githubusercontent.com/113006963/209284372-7ea202ca-f05c-42fc-8f59-fa04a210d6e8.JPG)
+ - https://www.lesstif.com/dbms/oracle-mysql-emp-dept-table-schema-test-data-18219073.html 테스트 용도로 EMP 테이블과 DEPT 테이블을 생성해서 두 테이블을 조인시켜 리스트를 출력합니다.
  </details>
  <details>
  <summary>Todo 메뉴</summary>
