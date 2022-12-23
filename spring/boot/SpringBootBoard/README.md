@@ -15,7 +15,8 @@
 회원가입과 로그인 기능이 있으며, 사진과 함께 글을 쓸 수 있고 댓글을 쓸 수 있습니다.<br>
 내가 쓴 Todo 할 일만 볼 수 있습니다.
 ## 5. 화면 설명
-전체 흘
+▷ 전체 흐름<br>
+![제목 없는 다이어그램 drawio (2)](https://user-images.githubusercontent.com/113006963/209293392-7d5cea5d-dffa-418b-9f7a-d6f56ece645a.png)
 <details>
 <summary>회원가입</summary>
 
