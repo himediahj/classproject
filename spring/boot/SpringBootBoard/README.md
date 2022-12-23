@@ -48,7 +48,7 @@
  ![todo수정](https://user-images.githubusercontent.com/113006963/209282145-69926671-8300-44f4-8c00-a60d18403b69.JPG)
  - 모달창을 띄워 값을 가져오고, 값을 변경하여 수정이 반영되도록 합니다.
  ### (3) Todo 검색
- ![사본 -검색결과](https://user-images.githubusercontent.com/113006963/209283042-497f6126-d967-4eb2-8e33-7a95f61a1cb9.jpg)
+![검색결과](https://user-images.githubusercontent.com/113006963/209283287-6e81eb06-4ef0-4aa2-8d9e-c4263b953fbe.png)
  - 'es'만 검색했을 때 'es'를 포함하는 Todo 검색 결과를 출력합니다.
  ### (4) Todo 삭제
  </details>
