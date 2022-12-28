@@ -14,6 +14,18 @@ import MailBox from './components/MailBox';
 import UserStatus from './components/UserStatus';
 import WarningBanner from './components/WarningBanner';
 import Mainpage from './components/Mainpage';
+import NumberList from './components/NumberList';
+import TeamPlayers from './components/TeamPlayers';
+import NameForm from './components/NameForm';
+import RequestForm from './components/RequestForm';
+import FruitSelect from './components/FruitSelect';
+import Reservation from './components/Reservation';
+import SignUp from './components/SignUp';
+import WelcomeMessage from './components/WelcomeMessage';
+import WelcomeDialog from './components/WelcomeDialog';
+import SignUpDialog from './components/SignUpDialog';
+import ProfileCard from './components/ProfileCard';
+import DarkOrWhite from './components/DarkOrWhite';
 
 /* const comment = {
   user : {
@@ -104,9 +116,81 @@ function App(){
   )
 } */
 
-function App(){
+/* function App(){
   return(
     <Mainpage/>
+  )
+} */
+
+/* function App(){
+  return(
+    <NumberList/>
+  )
+} */
+
+/* function App(){
+  return(
+    <TeamPlayers/>
+  )
+} */
+
+/* function App(){
+  return(
+    <NameForm/>
+  )
+} */
+
+/* function App(){
+  return(
+    <RequestForm/>
+  )
+} */
+
+/* function App(){
+  return(
+    <FruitSelect/>
+  )
+} */
+
+/* function App(){
+  return(
+    <Reservation/>
+  )
+} */
+
+/* function App(){
+  return(
+    <SignUp/>
+  )
+} */
+
+/* function App(){
+  return(
+    <WelcomeMessage/>
+  )
+} */
+
+/* function App(){
+  return(
+    <WelcomeDialog/>
+  )
+} */
+
+/* function App(){
+  return(
+    <SignUpDialog/>
+  )
+} */
+
+/* function App(){
+  return(
+    <ProfileCard/>
+  )
+} */
+
+function App(){
+  return(
+    <DarkOrWhite/>
   )
 }
 
