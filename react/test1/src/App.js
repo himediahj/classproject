@@ -26,6 +26,8 @@ import WelcomeDialog from './components/WelcomeDialog';
 import SignUpDialog from './components/SignUpDialog';
 import ProfileCard from './components/ProfileCard';
 import DarkOrWhite from './components/DarkOrWhite';
+import Container from './components/ex1/Container';
+import WordContainer from './components/ex2/WordContainer';
 
 /* const comment = {
   user : {
@@ -188,9 +190,21 @@ function App(){
   )
 } */
 
-function App(){
+/* function App(){
   return(
     <DarkOrWhite/>
+  )
+} */
+
+/* function App(){
+  return(
+    <Container/>
+  )
+} */
+
+function App(){
+  return(
+    <WordContainer/>
   )
 }
 
